@@ -1,3 +1,5 @@
+@use '../abstract/mixins' as m;
+
 .about {
     display: flex;
     justify-content: center;
@@ -6,12 +8,10 @@
 }
 
 .about-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
+
 }
 
 .about-container {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -72,9 +72,10 @@
 }
 
 .expertise-grid {
-    display: grid;
+    @include m.columns($width: 32%,$justify: space-between);
+    /*display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;
+    gap: 25px;*/
     margin-top: 30px;
 }
 

@@ -87,6 +87,7 @@ html {
 body {
   padding-top: 80px;
   background: #f8f9fa;
+  color: #ffffff;
   background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
   font-size: 1rem;
   line-height: 0;
@@ -136,7 +137,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.9vw;
+  font-size: 1.7vw;
   line-height: 2.2rem;
   font-weight: 400;
   font-style: normal;
@@ -167,7 +168,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.16vw;
+  font-size: 2vw;
   line-height: 1.8rem;
   font-weight: 400;
   font-style: normal;
@@ -229,7 +230,7 @@ span {
 }
 
 p {
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   line-height: 2rem;
   font-weight: 400;
   font-style: normal;
@@ -255,7 +256,7 @@ p {
 }
 
 li {
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   line-height: 1.7rem;
   font-weight: 400;
   font-style: normal;
@@ -686,7 +687,7 @@ a {
 }
 
 .slider-description {
-  max-width: 430px;
+  max-width: 400px;
   text-align: left;
 }
 
@@ -1105,13 +1106,7 @@ a {
   margin-top: 50px;
 }
 
-.about-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
-}
-
 .about-container {
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1172,9 +1167,18 @@ a {
 }
 
 .expertise-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.expertise-grid > * {
+  flex-basis: 32%;
+}
+.expertise-grid {
+  /*display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
+  gap: 25px;*/
   margin-top: 30px;
 }
 
@@ -1345,16 +1349,7 @@ a {
     padding: 25px 20px;
   }
 }
-body {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
-  color: #fff;
-  min-height: 100vh;
-  padding: 20px;
-}
-
 .configurator-container {
-  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1389,12 +1384,6 @@ body {
   border-radius: 20px;
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-h2 {
-  margin-bottom: 20px;
-  color: #fff;
-  font-size: 1.5em;
 }
 
 .processor-options {
@@ -1773,7 +1762,6 @@ h2 {
   text-align: center;
   color: #b0b0b0;
   margin-bottom: 25px;
-  font-size: 0.95em;
   line-height: 1.4;
   flex-shrink: 0;
 }
@@ -1788,7 +1776,6 @@ h2 {
 }
 
 .product-features li {
-  padding: 10px 0;
   display: flex;
   align-items: center;
   color: #e0e0e0;

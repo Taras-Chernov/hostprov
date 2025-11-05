@@ -15,6 +15,7 @@ html {
 body {
     padding-top: 80px;
     background: #f8f9fa;
+    color: #ffffff;
     background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
     @include m.font($size: 1rem);
     @extend %font-text;
@@ -47,7 +48,7 @@ h1 {
 }
 
 h2 {
-    @include m.font($size: 1.9vw, $height: 2.2rem);
+    @include m.font($size: 1.7vw, $height: 2.2rem);
     @extend %font-primary;
     padding-bottom: 15px;
     text-transform: uppercase;
@@ -63,7 +64,7 @@ h2 {
 }
 
 h3 {
-    @include m.font($size: 1.16vw, $height: 1.8rem);
+    @include m.font($size: 2vw, $height: 1.8rem);
     @extend %font-primary;
     text-transform: uppercase;
     @include m.media-tablet {
@@ -96,7 +97,7 @@ span {
 }
 
 p {
-    @include m.font($size: 1.5vw, $height: 2rem);
+    @include m.font($size: 1.3vw, $height: 2rem);
     @extend %font-text;
         @include m.media-tablet {
             @include m.font($size: 2.08vw, $height: 1.5rem);
@@ -107,7 +108,7 @@ p {
 }
 
 li {
-    @include m.font($size: 1.2vw, $height: 1.7rem);
+    @include m.font($size: 1.1vw, $height: 1.7rem);
     @extend %font-text;
 }
 
