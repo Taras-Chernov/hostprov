@@ -1,0 +1,80 @@
+@use '../abstract/constants' as c;
+@use '../abstract/mixins' as m;
+@use '../abstract/placeholders';
+
+.modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(34, 34, 34, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal__content {
+            position: relative;
+            background-color: white;
+            padding: 60px;
+            height: 356px;
+            width: 500px;
+            @include m.media-mobile {
+                padding: 60px 20px;
+                height: 384px;
+                width: 340px;
+        }
+    }
+        
+        .modal__title {
+            text-align: center;
+            color: c.$color-title;
+            margin-bottom: 12px;
+            font-size: 1.05vw;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            @include m.media-tablet {
+                    @include m.font($size: 2.6vw, $height: 1.8rem);
+                }
+            @include m.media-mobile {
+                    @include m.font($size: 5.3vw, $height: 1.8rem);
+                }
+        }
+        
+        .modal__container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .modal__name, .modal__tel {
+            height: 60px;
+            width: 100%;
+            padding-left: 12px;
+            @extend %transition;
+            &:hover {
+                border-color: c.$color-button-hover;
+            }
+            &::placeholder {
+                @include m.font($size: 0.94vw, $height: 1.5rem);
+                @extend %font-primary;
+                text-transform: uppercase;
+                @include m.media-tablet {
+                    @include m.font($size: 2.1vw, $height: 1rem);
+                }
+                @include m.media-mobile {
+                    @include m.font($size: 4.1vw, $height: 1rem);
+                }
+            }
+            
+        }
+        
+        .modal__name:focus, .Modal__tel:focus {
+            outline: none;
+            border-color: 1px c.$color-button-hover solid;;
+        }
+        
+        

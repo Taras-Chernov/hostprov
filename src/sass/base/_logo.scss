@@ -1,0 +1,22 @@
+@use '../abstract/constants' as c;
+@use '../abstract/mixins' as m;
+@use '../abstract/placeholders';
+
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo__img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo__title {
+    @include m.font($size: 2rem, $height: 1rem, $weight: 700);
+    @extend %font-primary;
+    color: c.$color-logo;
+    text-transform: uppercase;
+}

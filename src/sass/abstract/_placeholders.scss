@@ -1,0 +1,29 @@
+@use '../abstract/constants' as c;
+
+%transition {
+    transition: all .9s ease-out;
+}
+
+%font-primary {
+    font-family: 'Exo 2', 'Times New Roman', Times, serif;
+}
+
+%font-text {
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+%img {
+    max-width: 100%;
+}
+
+%red-line {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: c.$color-title;
+
+    content: ""; display: block; border-bottom: 1px solid #FFFFFF;
+}

@@ -1,0 +1,176 @@
+.licenses {
+    
+}
+
+.licenses-section {
+    padding-bottom: 40px;
+}
+
+.licenses-container {
+    display: flex;
+    justify-content: center;
+}
+
+.licenses-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.licenses-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.licenses-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(45deg, #ff6b6b, #ffa726);
+}
+
+.licenses-content {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+}
+
+.licenses-icon {
+    font-size: 4em;
+    flex-shrink: 0;
+}
+
+.licenses-text {
+    flex-grow: 1;
+}
+
+.licenses-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #ffa726);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.licenses-text p {
+    color: #e0e0e0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.licenses-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+}
+
+.feature-check {
+    color: #ffa726;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.licenses-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    min-width: 200px;
+}
+
+.licenses-price {
+    text-align: center;
+}
+
+.price-label {
+    display: block;
+    color: #b0b0b0;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.discount {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #ffa726;
+}
+
+.licenses-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #ff6b6b, #ffa726);
+    color: white;
+    white-space: nowrap;
+}
+
+.licenses-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+@media (max-width: 968px) {
+    .licenses-section {
+        padding: 0 20px 20px;
+    }
+    
+    .licenses-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .licenses-features {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .licenses-action {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .licenses-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .licenses-text h3 {
+        font-size: 1.5em;
+    }
+    
+    .licenses-text p {
+        font-size: 1em;
+    }
+    
+    .licenses-icon {
+        font-size: 3em;
+    }
+}

@@ -1,0 +1,26 @@
+@use '../abstract/constants' as c;
+@use '../abstract/mixins' as m;
+@use '../abstract/placeholders';
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.navigation__item:not(:last-child) {
+    padding-right: 10px;
+    border-right: 2px solid c.$color-menu;
+}
+
+.navigation__link {
+    @include m.font($size: 1.2rem, $height: 1rem, $spacing: 0.2rem, $weight: 700);
+    @extend %font-primary;
+    @extend %transition;
+    color: c.$color-menu;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+        color: c.$color-menu-hover;
+    }
+}

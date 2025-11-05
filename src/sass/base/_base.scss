@@ -1,0 +1,109 @@
+@use '../abstract/constants' as c;
+@use '../abstract/mixins' as m;
+@use '../abstract/placeholders';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @include m.font($size: 1rem);
+    @extend %font-text;
+    min-height: 100vh;
+}
+
+body.modal-open {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+h1 {
+    @include m.font($size: 6.75vw, $height: 8rem, $weight: 300);
+    @extend %font-primary;
+    color: c.$color-menu;
+    text-transform: uppercase;
+    @include m.media-tablet {
+        @include m.font($size: 9vw, $height: 5rem, $weight: 300);
+    }
+    @include m.media-mobile {
+        @include m.font($size: 14.5vw, $height: 4.3rem, $weight: 300);
+    }
+
+}
+
+h2 {
+    @include m.font($size: 1.9vw, $height: 2.2rem);
+    @extend %font-primary;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include m.media-tablet {
+        @include m.font($size: 4.1vw, $height: 4.2rem);
+    }
+    @include m.media-mobile {
+        @include m.font($size: 8.4vw, $height: 4.2rem, $weight: 400);
+    }
+}
+
+h3 {
+    @include m.font($size: 1.16vw, $height: 1.8rem);
+    @extend %font-primary;
+    text-transform: uppercase;
+    @include m.media-tablet {
+        @include m.font($size: 2.6vw);
+    }
+    @include m.media-mobile {
+        @include m.font($size: 5.4vw, $weight: 300);
+    }
+}
+
+h4 {
+    @include m.font($size: 1.6rem, $height: 2.4rem);
+    @extend %font-text;
+    text-transform: uppercase;
+}
+
+img {
+    @extend %img;
+}
+
+span {
+    @include m.font($size: 1.6vw, $height: 1.2em);
+    @extend %font-text;
+    @include m.media-tablet {
+        @include m.font($size: 2.1vw);
+    }
+    @include m.media-mobile {
+        @include m.font($size: 4vw, $height: 0.4rem, $weight: 300);
+    }
+}
+
+p {
+    @include m.font($size: 1.5vw, $height: 2rem);
+    @extend %font-text;
+        @include m.media-tablet {
+            @include m.font($size: 2.08vw, $height: 1.5rem);
+        }
+        @include m.media-mobile {
+            @include m.font($size: 4.25vw, $height: 1.5rem, $weight: 300);
+        }
+}
+
+li {
+    @include m.font($size: 1.2vw, $height: 1.7rem);
+    @extend %font-text;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}

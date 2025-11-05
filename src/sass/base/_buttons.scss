@@ -1,0 +1,120 @@
+@use '../abstract/constants' as c;
+@use '../abstract/placeholders';
+@use '../abstract/mixins' as m;
+
+.type__button {
+    display: flex;
+    background-color: c.$color-button;
+    @extend %transition;
+    border: 1px c.$color-button solid; 
+    &:hover {
+        background-color: c.$color-button-hover;
+        border: 1px c.$color-button-hover solid;
+    }
+}
+
+.type__button_link {
+    @include m.font($size: 0.94vw, $height: 1rem);
+    @extend %font-primary;
+    padding: 20px 100px;
+    color: c.$color-text-buttons;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+        color: c.$color-text-buttons-hover;
+    }
+    @include m.media-tablet {
+        @include m.font($size: 2.1vw, $height: 1.1rem);
+    
+    }
+    @include m.media-mobile {
+        @include m.font($size: 4.2vw, $height: 1.1rem);
+    }
+}
+
+.form_button {
+    width: 21%;
+    background-color: c.$color-button;
+    @extend %transition;
+    border: 1px c.$color-button solid; 
+    @include m.font($size: 0.94vw, $height: 1rem);
+    @extend %font-primary;
+    padding: 13px 65px;
+    color: c.$color-text-buttons;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+        color: c.$color-text-buttons-hover;
+        background-color: c.$color-button-hover;
+        border: 1px c.$color-button-hover solid;
+    }
+    @include m.media-tablet {
+        @include m.font($size: 2.1vw, $height: 1rem);
+        padding: 2.5vw 8.2vw;
+        width: 30%;
+    }
+    @include m.media-tablet {
+        @include m.font($size: 2.1vw, $height: 1rem);
+        padding: 2.5vw 8.2vw;
+        width: 30%;
+    
+    }
+    @include m.media-mobile {
+        @include m.font($size: 4.1vw, $height: 1rem);
+        height: 60px;
+        width: 100%;
+    }
+}
+
+    .modal__button {
+        background-color: c.$color-button;
+        @extend %transition;
+        border: 1px c.$color-button solid; 
+        @include m.font($size: 0.94vw, $height: 1rem);
+        @extend %font-primary;
+        padding: 21px 65px;
+        color: c.$color-text-buttons;
+        text-decoration: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        &:hover {
+            color: c.$color-text-buttons-hover;
+            background-color: c.$color-button-hover;
+            border: 1px c.$color-button-hover solid;
+        }
+        @include m.media-tablet {
+        @include m.font($size: 2.1vw, $height: 1rem);
+    
+    
+    }
+    @include m.media-mobile {
+        @include m.font($size: 4.1vw, $height: 1rem);
+
+    }
+    }
+        
+      
+    .modal__close_button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+        cursor: pointer;
+        color: c.$color-button;
+        background: none;
+        border: none;
+    }
+
+    .nav-btn {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        @include m.media-tablet {
+        display: none;    
+        }
+    }
+
+    .nav-btn:hover {
+        transform: translateY(-2px);
+    }
+

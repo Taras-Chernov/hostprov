@@ -1,0 +1,103 @@
+@use '../abstract/constants' as c;
+@use '../abstract/placeholders';
+@use '../abstract/mixins' as m;
+
+.footer {
+    background-color: c.$color-background;
+}
+
+.footer__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 23px;
+
+}
+
+.form__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+    padding: 0px 212px;
+    @include m.media-tablet {
+        padding: 0;
+    }
+    @include m.media-mobile {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.form__title {
+    padding: 40px 0 18px;
+    @include m.media-tablet {
+        padding: 54px 0 31px;
+    }
+    @include m.media-mobile {
+        padding: 55px 0 32px;
+    }
+}
+
+.form_name, .form_tel {
+    height: 60px;
+    width: 40%;
+    padding-left: 12px;
+    @extend %transition;
+    &:hover {
+        border-color: c.$color-button-hover;
+    }
+    &::placeholder {
+        @include m.font($size: 0.94vw, $height: 1.5rem);
+        @extend %font-primary;
+        text-transform: uppercase;
+        @include m.media-tablet {
+            @include m.font($size: 2.1vw, $height: 1rem);
+        }
+        @include m.media-mobile {
+            @include m.font($size: 4.1vw, $height: 1rem);
+        }
+    }
+    @include m.media-tablet {
+        width: 40%;
+    }
+    @include m.media-mobile {
+        width: 100%;
+    }
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 100px;
+    @include m.media-mobile {
+        flex-direction: column;
+        height: 345px;
+        gap: 28px;
+    }
+}
+
+.social__item {
+    
+}
+
+.social__link {
+    text-decoration: none;
+    @include m.font($size: 0.94vw, $height: 1.5rem);
+    @extend %font-primary;
+    text-transform: uppercase;
+    color: c.$color-menu;
+    @extend %transition;
+    cursor: pointer;
+    &:hover {
+        color: c.$color-menu-hover;
+    }
+    @include m.media-tablet {
+        @include m.font($size: 2.1vw, $height: 1.5rem);
+    }
+    @include m.media-mobile {
+        @include m.font($size: 4.1vw, $height: 1.5rem);
+    }
+}

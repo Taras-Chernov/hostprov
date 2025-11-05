@@ -1,0 +1,31 @@
+@use '../abstract/constants' as c;
+@mixin font ($size, $height: 0, $spacing: 0, $weight: 400, $style: normal) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $weight;
+    font-style: $style;
+    letter-spacing: $spacing;
+}
+
+@mixin columns ($width, $justify: center, $align: center, $wrap: wrap) {
+    display: flex;
+    flex-wrap: $wrap;
+    align-items: $align;
+    justify-content: $justify;
+    >* {
+        flex-basis: $width;
+    }
+}
+
+@mixin media-laptop {
+    @media (max-width: c.$content-width) {@content;}
+}
+
+@mixin media-tablet {
+    @media (max-width: c.$tablet-width) {@content;}
+}
+
+@mixin media-mobile {
+    @media (max-width: c.$mobile-width) {@content;}
+}
+

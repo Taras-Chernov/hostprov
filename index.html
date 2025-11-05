@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+    <title>hostprov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/sass/style.css">
+    <link rel="icon" type="image/x-icon" href="./src/img/favicon/favicon.png">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Логотип и название -->
+            <div class="header-brand">
+                <div class="header__logo"><img class="logo__img" src="./src/img/logo/logo.png" alt="logo"></div>
+                <div class="logo"><h1>HOSTPROV</h1></div>
+            </div>
+
+            <!-- Основная навигация -->
+            <nav class="header-nav">
+                <a href="#products" class="nav-link">ПРОДУКТЫ</a>
+                <a href="#licenses" class="nav-link">ЛИЦЕНЗИИ 1C</a>
+                <a href="#about" class="nav-link">О НАС</a>
+                <a href="#contact" class="nav-link">КОНТАКТЫ</a>
+            </nav>
+
+            <!-- Кнопка для мобильного меню -->
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="about">
+            <div class="wrapper">
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="nav-btn prev"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"><title>Chevrons-left SVG Icon</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.25 3.75L7.75 8l4.5 4.25m-5-8.5L2.75 8l4.5 4.25"/></svg></div>
+                        <!-- Слайд 1: Инфраструктура -->
+                        <div class="slide active">
+                            <div class="slider-content">
+                                <h2 class="slider-title">Основа вашего роста — наша инфраструктура</h2>
+                                <p class="slider-description">Мы используем современное оборудование Tier 3 дата-центров и резервирование всех критических компонентов.</p>
+                                <ul class="features">
+                                    <li class="slider-item">Отказоустойчивая платформа</li>
+                                    <li class="slider-item">Автоматический мониторинг 24/7</li>
+                                    <li class="slider-item">Ежедневное резервное копирование</li>
+                                    <li class="slider-item">Глобальная сеть доставки контента</li>
+                                </ul>
+                            </div>
+                            <div class="slider-image">
+                                <!-- Замените на свою картинку -->
+                                <img src="./src/img/slider/infra.png" alt="Современная инфраструктура">
+                            </div>
+                        </div>
+
+                        <!-- Слайд 2: Техподдержка -->
+                        <div class="slide">
+                            <div class="slider-content">
+                                <h2 class="slider-title">Ваш персональный отдел инфраструктуры</h2>
+                                <p class="slider-description">Наши senior-инженеры доступны круглосуточно для решения любых задач.</p>
+                                <ul class="features">
+                                    <li>Квалифицированная помощь за 15 минут</li>
+                                    <li>Миграция сервисов любой сложности</li>
+                                    <li>Оптимизация производительности</li>
+                                    <li>Консультации по архитектуре</li>
+                                </ul>
+                            </div>
+                            <div class="slider-image">
+                                <!-- Замените на свою картинку -->
+                                <img src="./src/img/slider/teem.png" alt="Техническая поддержка">
+                            </div>
+                        </div>
+
+                        <!-- Слайд 3: Скорость и удобство -->
+                        <div class="slide">
+                            <div class="slider-content">
+                                <h2 class="slider-title">Мощность и простота управления</h2>
+                                <p class="slider-description">Развертывайте серверы любой конфигурации за 2 минуты и масштабируйте ресурсы одним кликом.</p>
+                                <ul class="features">
+                                    <li>Развертывание за 2 минуты</li>
+                                    <li>Масштабирование в один клик</li>
+                                    <li>Интуитивная панель управления</li>
+                                    <li>Полнофункциональное API</li>
+                                </ul>
+                            </div>
+                            <div class="slider-image">
+                                <!-- Замените на свою картинку -->
+                                <img src="./src/img/slider/drive.png" alt="Скорость и управление">
+                            </div>
+                        </div>
+                        <div class="nav-btn next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"><title>Chevrons-right SVG Icon</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 12.25L8.25 8l-4.5-4.25m5 8.5L13.25 8l-4.5-4.25"/></svg></div>
+                    </div>
+                <div class="nav-dots">
+                    <div class="dot active" data-slide="0"></div>
+                    <div class="dot" data-slide="1"></div>
+                    <div class="dot" data-slide="2"></div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="wrapper">
+                <div class="products-container">
+                    <!-- Карточка 1 -->
+                    <div class="product-card">
+                        <div class="product-icon">🛡️</div>
+                        <h3>Managed Server</h3>
+                        <p class="product-subtitle">Сервер под нашим полным сопровождением</p>
+                        <ul class="product-features">
+                            <li>Полное администрирование 24/7</li>
+                            <li>Автоматические обновления и бэкапы</li>
+                            <li>Мониторинг и безопасность</li>
+                            <li>Техподдержка высшего уровня</li>
+                            <li>Гарантия uptime 99.9%</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price">от 2 900 ₽/мес</span>
+                        </div>
+                        <button class="product-btn primary">Выбрать конфигурацию</button>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="product-card">
+                        <div class="product-icon">👑</div>
+                        <h3>Dedicated Server</h3>
+                        <p class="product-subtitle">Сервер с полными правами админа</p>
+                        <ul class="product-features">
+                            <li>Root-доступ к серверу</li>
+                            <li>Выделенное оборудование</li>
+                            <li>Любая ОС и ПО</li>
+                            <li>Полный контроль над настройками</li>
+                            <li>Мощные процессоры</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price">от 4 500 ₽/мес</span>
+                        </div>
+                        <button class="product-btn secondary">Настроить сервер</button>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="product-card">
+                        <div class="product-icon">☁️</div>
+                        <h3>Cloud Storage</h3>
+                        <p class="product-subtitle">Облачное пространство под ваши нужды</p>
+                        <ul class="product-features">
+                            <li>Масштабируемый объем</li>
+                            <li>Высокая доступность данных</li>
+                            <li>Шифрование и репликация</li>
+                            <li>Быстрый доступ из любой точки</li>
+                            <li>Гибкая тарификация</li>
+                        </ul>
+                        <div class="product-price">
+                            <span class="price">от 15 ₽/ГБ в месяц</span>
+                        </div>
+                        <button class="product-btn primary"><a href="#config-disk">Рассчитать объем</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="licenses">
+            <div class="wrapper">
+                <div class="licenses-section">
+                    <div class="licenses-container">
+                        <div class="licenses-card">
+                            <div class="licenses-content">
+                                <div class="licenses-icon">📊</div>
+                                <div class="licenses-text">
+                                    <h3>Лицензии 1С по выгодной цене</h3>
+                                    <p>Приобретайте официальные лицензии 1С для вашего бизнеса с дополнительной скидкой при заказе хостинга</p>
+                                    <div class="licenses-features">
+                                        <div class="feature-item">
+                                            <span class="feature-check">✓</span>
+                                            <span>Официальные поставки от 1С</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-check">✓</span>
+                                            <span>Техническая поддержка 1С</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-check">✓</span>
+                                            <span>Обновления и сопровождение</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-check">✓</span>
+                                            <span>Дополнительная скидка при аренде сервера</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="licenses-action">
+                                    <div class="licenses-price">
+                                        <span class="price-label">Специальные условия</span>
+                                        <span class="discount">до -15%</span>
+                                    </div>
+                                    <button class="licenses-btn">Получить консультацию</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="order">
+            <div class="wrapper">
+                <div class="configurator-container">
+                    <div class="configurator-header">
+                        <h1>КОНФИГУРАТОР СЕРВЕРНЫХ МОЩНОСТЕЙ</h1>
+                    </div>
+
+                    <!-- Левый столбец - Выбор конфигурации -->
+                    <div class="selection-section">
+                        <h2>Процессор</h2>
+                        <div class="processor-options">
+                            <div class="processor-option selected" data-processor="xeon-gold" data-price="5000" data-cores="8">
+                                <div class="processor-name">Xeon Gold 6248R</div>
+                                <div class="processor-price">5 000 ₽/мес</div>
+                            </div>
+                            <div class="processor-option" data-processor="xeon-silver" data-price="3500" data-cores="6">
+                                <div class="processor-name">Xeon Silver 4214</div>
+                                <div class="processor-price">3 500 ₽/мес</div>
+                            </div>
+                            <div class="processor-option" data-processor="amd-epyc" data-price="4200" data-cores="8">
+                                <div class="processor-name">AMD EPYC 7343</div>
+                                <div class="processor-price">4 200 ₽/мес</div>
+                            </div>
+                        </div>
+
+                        <div class="cores-section">
+                            <h2>Количество ядер</h2>
+                            <div class="config-item">
+                                <div class="config-label">8 ядер</div>
+                                <div class="config-controls">
+                                    <button class="quantity-btn minus" data-type="cores">-</button>
+                                    <span class="config-value" id="coresQuantity">8</span>
+                                    <button class="quantity-btn plus" data-type="cores">+</button>
+                                </div>
+                                <div class="cores-price">+4 000 ₽/мес</div>
+                            </div>
+                        </div>
+
+                        <h2>Оперативная память (RAM)</h2>
+                        <div class="config-item">
+                            <div class="config-label">32 ГБ</div>
+                            <div class="config-controls">
+                                <button class="quantity-btn minus" data-type="ram">-</button>
+                                <span class="config-value" id="ramQuantity">1</span>
+                                <button class="quantity-btn plus" data-type="ram">+</button>
+                            </div>
+                            <div class="config-price">+2 400 ₽/мес</div>
+                        </div>
+
+                        <h2>Дисковое пространство</h2>
+                        <div class="config-item">
+                            <div class="config-label">500 ГБ</div>
+                            <div class="config-controls">
+                                <button class="quantity-btn minus" data-type="storage">-</button>
+                                <span class="config-value" id="storageQuantity">1</span>
+                                <button class="quantity-btn plus" data-type="storage">+</button>
+                            </div>
+                            <div class="config-price">+1 125 ₽/мес</div>
+                        </div>
+
+                        <h2>Тип хранилища</h2>
+                        <div class="storage-options">
+                            <div class="storage-option selected" data-type="nvme" data-multiplier="1.5">
+                                <div>SSD NVMe</div>
+                                <div class="storage-multiplier">1.5x</div>
+                            </div>
+                            <div class="storage-option" data-type="sata" data-multiplier="1">
+                                <div>SATA SSD</div>
+                                <div class="storage-multiplier">1x</div>
+                            </div>
+                            <div class="storage-option" data-type="hdd" data-multiplier="0.6">
+                                <div>HDD</div>
+                                <div class="storage-multiplier">0.6x</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Правый столбец - Итоговая конфигурация -->
+                    <div class="configuration-section">
+                        <h2>Ваша конфигурация</h2>
+                        
+                        <div class="config-item">
+                            <div class="config-label">Процессор</div>
+                            <div class="config-value" id="configProcessor">Xeon Gold 6248R</div>
+                            <div class="config-price">5 000 ₽</div>
+                        </div>
+
+                        <div class="config-item">
+                            <div class="config-label">Ядра</div>
+                            <div class="config-value" id="configCores">8 ядер</div>
+                            <div class="config-price">4 000 ₽</div>
+                        </div>
+
+                        <div class="config-item">
+                            <div class="config-label">Память</div>
+                            <div class="config-value" id="configRam">32 ГБ</div>
+                            <div class="config-price">2 400 ₽</div>
+                        </div>
+
+                        <div class="config-item">
+                            <div class="config-label">Хранилище</div>
+                            <div class="config-value" id="configStorage">500 ГБ SSD NVMe</div>
+                            <div class="config-price">1 125 ₽</div>
+                        </div>
+
+                        <div class="total-section">
+                            <h3>Итого в месяц:</h3>
+                            <div class="total-price" id="totalPrice">12 525 ₽</div>
+                            <button class="order-btn" id="orderBtn">Заказать мощности</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Модальное окно заказа -->
+                <div class="modal-overlay" id="modalOverlay">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">Ваш заказ серверных мощностей</div>
+                            <button class="close-modal" id="closeModal">×</button>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <div class="order-item">
+                                <span>Процессор:</span>
+                                <span id="orderProcessor">Xeon Gold 6248R</span>
+                            </div>
+                            <div class="order-item">
+                                <span>Количество ядер:</span>
+                                <span id="orderCores">8 ядер</span>
+                            </div>
+                            <div class="order-item">
+                                <span>Оперативная память:</span>
+                                <span id="orderRam">32 ГБ</span>
+                            </div>
+                            <div class="order-item">
+                                <span>Хранилище:</span>
+                                <span id="orderStorage">500 ГБ SSD NVMe</span>
+                            </div>
+                            <div class="order-total">
+                                <span>Итого в месяц:</span>
+                                <span id="orderTotal">12 525 ₽</span>
+                            </div>
+                        </div>
+
+                        <form id="orderForm">
+                            <div class="form-group">
+                                <label for="userName">Ваше имя *</label>
+                                <input type="text" id="userName" required placeholder="Иван Иванов">
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email *</label>
+                                <input type="email" id="userEmail" required placeholder="ivan@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="userPhone">Телефон *</label>
+                                <input type="tel" id="userPhone" required placeholder="+7 (999) 999-99-99">
+                            </div>
+                            <div class="form-group">
+                                <label for="userComment">Комментарий к заказу</label>
+                                <textarea id="userComment" placeholder="Дополнительные пожелания или требования"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-order">Отправить заказ</button>
+                        </form>
+                    </div>
+                </div>      
+                
+                
+                <!-- Блок для заказа дискового пространства -->
+<div class="configurator-container" style="margin-top: 50px;">
+    <div class="configurator-header">
+        <h1>КОНФИГУРАТОР ДИСКОВОГО ПРОСТРАНСТВА</h1>
+    </div>
+
+    <!-- Левый столбец - Выбор конфигурации -->
+    <div class="selection-section">
+        <h2>Тип хранилища</h2>
+        <div class="storage-options">
+            <div class="storage-option selected" data-type="nvme" data-multiplier="1.5">
+                <div>SSD NVMe</div>
+                <div class="storage-multiplier">1.5x</div>
+            </div>
+            <div class="storage-option" data-type="sata" data-multiplier="1">
+                <div>SATA SSD</div>
+                <div class="storage-multiplier">1x</div>
+            </div>
+            <div class="storage-option" data-type="hdd" data-multiplier="0.6">
+                <div>HDD</div>
+                <div class="storage-multiplier">0.6x</div>
+            </div>
+        </div>
+
+        <h2>Объем хранилища</h2>
+        <div class="config-item">
+            <div class="config-label">500 ГБ</div>
+            <div class="config-controls">
+                <button class="quantity-btn minus" data-type="storage-space">-</button>
+                <span class="config-value" id="storageSpaceQuantity">1</span>
+                <button class="quantity-btn plus" data-type="storage-space">+</button>
+            </div>
+            <div class="config-price">+1 125 ₽/мес</div>
+        </div>
+
+        <h2>Резервное копирование</h2>
+        <div class="processor-options">
+            <div class="processor-option selected" data-backup="basic" data-price="0">
+                <div class="processor-name">Базовое</div>
+                <div class="processor-price">0 ₽/мес</div>
+            </div>
+            <div class="processor-option" data-backup="advanced" data-price="500">
+                <div class="processor-name">Расширенное</div>
+                <div class="processor-price">500 ₽/мес</div>
+            </div>
+            <div class="processor-option" data-backup="premium" data-price="1000">
+                <div class="processor-name">Премиум</div>
+                <div class="processor-price">1 000 ₽/мес</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Правый столбец - Итоговая конфигурация -->
+    <div class="configuration-section">
+        <h2>Ваша конфигурация</h2>
+        
+        <div class="config-item">
+            <div class="config-label">Тип хранилища</div>
+            <div class="config-value" id="configStorageType">SSD NVMe</div>
+            <div class="config-price">1 125 ₽</div>
+        </div>
+
+        <div class="config-item">
+            <div class="config-label">Объем</div>
+            <div class="config-value" id="configStorageSpace">500 ГБ</div>
+            <div class="config-price">1 125 ₽</div>
+        </div>
+
+        <div class="config-item">
+            <div class="config-label">Резервное копирование</div>
+            <div class="config-value" id="configBackup">Базовое</div>
+            <div class="config-price">0 ₽</div>
+        </div>
+
+        <div class="total-section">
+            <h3>Итого в месяц:</h3>
+            <div class="total-price" id="totalStoragePrice">2 250 ₽</div>
+            <button class="order-btn" id="orderStorageBtn">Заказать хранилище</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для заказа хранилища -->
+<div class="modal-overlay" id="storageModalOverlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="modal-title">Ваш заказ дискового пространства</div>
+            <button class="close-modal" id="closeStorageModal">×</button>
+        </div>
+        
+        <div class="order-summary">
+            <div class="order-item">
+                <span>Тип хранилища:</span>
+                <span id="orderStorageType">SSD NVMe</span>
+            </div>
+            <div class="order-item">
+                <span>Объем:</span>
+                <span id="orderStorageSpace">500 ГБ</span>
+            </div>
+            <div class="order-item">
+                <span>Резервное копирование:</span>
+                <span id="orderBackup">Базовое</span>
+            </div>
+            <div class="order-total">
+                <span>Итого в месяц:</span>
+                <span id="orderStorageTotal">2 250 ₽</span>
+            </div>
+        </div>
+
+        <form id="storageOrderForm">
+            <div class="form-group">
+                <label for="storageUserName">Ваше имя *</label>
+                <input type="text" id="storageUserName" required placeholder="Иван Иванов">
+            </div>
+            <div class="form-group">
+                <label for="storageUserEmail">Email *</label>
+                <input type="email" id="storageUserEmail" required placeholder="ivan@example.com">
+            </div>
+            <div class="form-group">
+                <label for="storageUserPhone">Телефон *</label>
+                <input type="tel" id="storageUserPhone" required placeholder="+7 (999) 999-99-99">
+            </div>
+            <div class="form-group">
+                <label for="storageUserComment">Комментарий к заказу</label>
+                <textarea id="storageUserComment" placeholder="Дополнительные пожелания или требования"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-order">Отправить заказ</button>
+        </form>
+    </div>
+</div>
+            </div>      
+        </section>
+
+
+        <section class="about">
+            <div class="wrapper">
+                <div class="about-section">
+                    <div class="about-container">
+                        <div class="about-content">
+                            <h2 class="about-title">Решаем ваши IT-задачи, а не просто сдаем серверы в аренду</h2>
+                            
+                            <div class="about-text">
+                                <p class="about-paragraph">
+                                    Вам нужна не просто виртуальная машина из каталога. Вам нужно решение, которое будет работать стабильно, быстро и без лишних хлопот. Именно так мы и подходим к делу.
+                                </p>
+                                
+                                <p class="about-paragraph">
+                                    Наша команда состоит из специалистов, которые прошли школу крупнейших сервис-провайдеров. Мы знаем, как строятся сложные облачные инфраструктуры, и теперь применяем этот опыт, чтобы помогать таким компаниям, как ваша.
+                                </p>
+                                
+                                <div class="expertise-section">
+                                    <h3 class="expertise-main-title">Чем мы можем быть вам полезны?</h3>
+                                    
+                                    <div class="expertise-grid">
+                                        <div class="expertise-card">
+                                            <div class="expertise-icon">📊</div>
+                                            <h4 class="expertise-title">Если вы работаете в 1С</h4>
+                                            <p class="expertise-description">
+                                                Мы обеспечим вам максимальную скорость и отклик системы, потому что мы в этом эксперты.
+                                            </p>
+                                            <div class="expertise-features">
+                                                <span class="feature-tag">Экспертный хостинг 1С</span>
+                                                <span class="feature-tag">Оптимизация производительности</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="expertise-card">
+                                            <div class="expertise-icon">⚡</div>
+                                            <h4 class="expertise-title">Если вам нужен сервер для других задач</h4>
+                                            <p class="expertise-description">
+                                                Вы получите надежную и производительную виртуальную машину, развернутую в несколько кликов.
+                                            </p>
+                                            <div class="expertise-features">
+                                                <span class="feature-tag">Классические ВМ</span>
+                                                <span class="feature-tag">Быстрое развертывание</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="expertise-card">
+                                            <div class="expertise-icon">👨‍💻</div>
+                                            <h4 class="expertise-title">Если вам не хватает своих IT-рук</h4>
+                                            <p class="expertise-description">
+                                                Наши специалисты готовы стать вашим отделом системного администрирования — удаленно и оперативно.
+                                            </p>
+                                            <div class="expertise-features">
+                                                <span class="feature-tag">Полное администрирование</span>
+                                                <span class="feature-tag">Поддержка 24/7</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="experience-section">
+                                    <div class="experience-content">
+                                        <h3 class="experience-title">Эксперты в облачной инфраструктуре</h3>
+                                        <p class="experience-description">
+                                            Мы — команда инженеров, создавшая сервис, в котором сами хотели бы работать. Наш путь начался в крупнейших хостинг-провайдерах страны, где мы получили бесценный опыт построения высоконагруженных и отказоустойчивых систем.
+                                        </p>
+                                        <p class="experience-description">
+                                            Этот опыт научил нас главному: универсальные решения не всегда идеальны для специфических задач. Поэтому мы развиваемся в двух ключевых направлениях — экспертный хостинг 1С и классические виртуальные серверы.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="why-us-section">
+                                    <h3 class="why-us-title">Почему выбирают нас?</h3>
+                                    <p class="why-us-description">
+                                        Потому что вы получаете <strong>уровень экспертизы крупного игрока</strong>, <strong>гибкость стартапа</strong> и <strong>честный партнерский подход</strong>. 
+                                        Мы — тот самый провайдер, который говорит с вами на одном языке и понимает суть ваших бизнес-задач.
+                                    </p>
+                                    <div class="cta-section">
+                                        <p class="cta-text">Давайте обсудим, как мы можем взять на себя заботу о вашей ИТ-инфраструктуре.</p>
+                                        <button class="cta-button">Обсудить проект</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="contacts">
+                
+    </footer>
+    <script src="./dist/main.js"></script>
+</body>
+</html>
