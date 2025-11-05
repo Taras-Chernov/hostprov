@@ -3,20 +3,15 @@
 @use '../abstract/placeholders';
 
 
-.header__logo {
+.header-logo {
     display: flex;
     align-items: center;
-    height: 100%;
+    @include m.media-mobile {
+        display: none;
+    }
 }
 
-.logo__img {
+.logo-img {
     height: 60px;
     margin-right: 10px;
-}
-
-.logo__title {
-    @include m.font($size: 2rem, $height: 1rem, $weight: 700);
-    @extend %font-primary;
-    color: c.$color-logo;
-    text-transform: uppercase;
 }

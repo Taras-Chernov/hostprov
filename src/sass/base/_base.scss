@@ -13,9 +13,17 @@ html {
 }
 
 body {
+    padding-top: 80px;
+    background: #f8f9fa;
+    background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
     @include m.font($size: 1rem);
     @extend %font-text;
     min-height: 100vh;
+    @media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+}
 }
 
 body.modal-open {
@@ -25,15 +33,15 @@ body.modal-open {
 }
 
 h1 {
-    @include m.font($size: 6.75vw, $height: 8rem, $weight: 300);
+    @include m.font($size: 4vw, $height: 4rem, $weight: 700);
     @extend %font-primary;
     color: c.$color-menu;
     text-transform: uppercase;
     @include m.media-tablet {
-        @include m.font($size: 9vw, $height: 5rem, $weight: 300);
+        @include m.font($size: 9vw, $height: 5rem, $weight: 700);
     }
     @include m.media-mobile {
-        @include m.font($size: 14.5vw, $height: 4.3rem, $weight: 300);
+        @include m.font($size: 8vw, $height: 4.3rem, $weight: 700);
     }
 
 }

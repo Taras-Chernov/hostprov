@@ -3,7 +3,7 @@
 @use '../abstract/mixins' as m;
 
 .main-header {
-    background: rgba(255, 255, 255, 0.95);
+    background: c.$color-background;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 198, 255, 0.2);
     position: fixed;
@@ -31,13 +31,9 @@
 
 
 .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
-    font-weight: 800;
     background: linear-gradient(45deg, #0072ff, #00c6ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
 }
 
 .header-nav {
@@ -47,10 +43,9 @@
 }
 
 .nav-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9em;
-    font-weight: 600;
-    color: #2c3e50;
+    @include m.font($size: 1.6vw, $height: 1.7rem, $weight: 500);
+    @extend %font-text;
+    color: c.$color-menu;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -71,7 +66,7 @@
     width: 0;
     height: 2px;
     background: linear-gradient(45deg, #0072ff, #00c6ff);
-    transition: width 0.3s ease;
+    transition: width 1s ease;
 }
 
 .nav-link:hover::after {
@@ -130,13 +125,11 @@
 }
 
 .mobile-nav-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #2c3e50;
+    @include m.font($size: 2.5vw, $height: 1rem, $weight: 500);
+    @extend %font-text;
+    color: c.$color-menu;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     padding: 12px 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -177,23 +170,6 @@
     
     .logo {
         font-size: 1.3em;
-    }
-}
-
-/* Плавный скролл для якорей */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Отступ для контента под фиксированной шапкой */
-body {
-    padding-top: 80px;
-    background: #f8f9fa;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 70px;
     }
 }
 

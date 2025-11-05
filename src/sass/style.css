@@ -62,11 +62,11 @@ table {
   transition: all 0.9s ease-out;
 }
 
-.form_name::placeholder, .form_tel::placeholder, .social__link, .modal__name::placeholder, .modal__tel::placeholder, .type__button_link, .form_button, .modal__button, .navigation__link, .logo__title, h1, h2, h3 {
+.form_name::placeholder, .form_tel::placeholder, .social__link, .modal__name::placeholder, .modal__tel::placeholder, .type__button_link, .form_button, .modal__button, .navigation__link, h1, h2, h3 {
   font-family: "Exo 2", "Times New Roman", Times, serif;
 }
 
-body, h4, span, p, li {
+.nav-link, .mobile-nav-link, body, h4, span, p, li {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
@@ -85,12 +85,20 @@ html {
 }
 
 body {
+  padding-top: 80px;
+  background: #f8f9fa;
+  background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
   font-size: 1rem;
   line-height: 0;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0;
   min-height: 100vh;
+}
+@media (max-width: 768px) {
+  body body {
+    padding-top: 70px;
+  }
 }
 
 body.modal-open {
@@ -100,28 +108,28 @@ body.modal-open {
 }
 
 h1 {
-  font-size: 6.75vw;
-  line-height: 8rem;
-  font-weight: 300;
+  font-size: 4vw;
+  line-height: 4rem;
+  font-weight: 700;
   font-style: normal;
   letter-spacing: 0;
-  color: #51dbff;
+  color: #2c3e50;
   text-transform: uppercase;
 }
 @media (max-width: 768px) {
   h1 {
     font-size: 9vw;
     line-height: 5rem;
-    font-weight: 300;
+    font-weight: 700;
     font-style: normal;
     letter-spacing: 0;
   }
 }
 @media (max-width: 380px) {
   h1 {
-    font-size: 14.5vw;
+    font-size: 8vw;
     line-height: 4.3rem;
-    font-weight: 300;
+    font-weight: 700;
     font-style: normal;
     letter-spacing: 0;
   }
@@ -259,25 +267,19 @@ a {
   color: #ffffff;
 }
 
-.header__logo {
+.header-logo {
   display: flex;
   align-items: center;
-  height: 100%;
+}
+@media (max-width: 380px) {
+  .header-logo {
+    display: none;
+  }
 }
 
-.logo__img {
+.logo-img {
   height: 60px;
   margin-right: 10px;
-}
-
-.logo__title {
-  font-size: 2rem;
-  line-height: 1rem;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 0;
-  color: #51dbff;
-  text-transform: uppercase;
 }
 
 .navigation {
@@ -288,7 +290,7 @@ a {
 
 .navigation__item:not(:last-child) {
   padding-right: 10px;
-  border-right: 2px solid #51dbff;
+  border-right: 2px solid #2c3e50;
 }
 
 .navigation__link {
@@ -297,7 +299,7 @@ a {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0.2rem;
-  color: #51dbff;
+  color: #2c3e50;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -492,7 +494,7 @@ a {
 .hamburger__line {
   display: block;
   position: absolute;
-  background-color: #51dbff;
+  background-color: #2c3e50;
   height: 3px;
   width: 100%;
   opacity: 1;
@@ -810,13 +812,9 @@ a {
 }
 
 .logo {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.8em;
-  font-weight: 800;
   background: linear-gradient(45deg, #0072ff, #00c6ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
 }
 
 .header-nav {
@@ -826,9 +824,11 @@ a {
 }
 
 .nav-link {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.9em;
-  font-weight: 600;
+  font-size: 1.6vw;
+  line-height: 1.7rem;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0;
   color: #2c3e50;
   text-decoration: none;
   text-transform: uppercase;
@@ -850,7 +850,7 @@ a {
   width: 0;
   height: 2px;
   background: linear-gradient(45deg, #0072ff, #00c6ff);
-  transition: width 0.3s ease;
+  transition: width 1s ease;
 }
 
 .nav-link:hover::after {
@@ -909,13 +909,14 @@ a {
 }
 
 .mobile-nav-link {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.1em;
-  font-weight: 600;
+  font-size: 2.5vw;
+  line-height: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0;
   color: #2c3e50;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   padding: 12px 20px;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -953,22 +954,6 @@ a {
     font-size: 1.3em;
   }
 }
-/* Плавный скролл для якорей */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Отступ для контента под фиксированной шапкой */
-body {
-  padding-top: 80px;
-  background: #f8f9fa;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 70px;
-  }
-}
 /* Эффект при скролле */
 .main-header.scrolled {
   background: rgba(255, 255, 255, 0.98);
@@ -977,7 +962,7 @@ body {
 }
 
 .footer {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .footer__form {
@@ -1088,7 +1073,7 @@ body {
   font-style: normal;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: #51dbff;
+  color: #2c3e50;
   cursor: pointer;
 }
 .social__link:hover {
@@ -1117,6 +1102,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 48vh;
+  margin-top: 50px;
 }
 
 .about-section {
@@ -1719,10 +1705,15 @@ h2 {
   }
 }
 .products-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.products-container > * {
+  flex-basis: 32%;
+}
+.products-container {
   margin-bottom: 50px;
 }
 
@@ -1770,9 +1761,6 @@ h2 {
 }
 
 .product-card h3 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-  font-weight: 700;
   margin-bottom: 10px;
   text-align: center;
   background: linear-gradient(45deg, #00c6ff, #0072ff);

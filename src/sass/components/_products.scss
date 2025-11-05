@@ -1,8 +1,7 @@
+@use '../abstract/mixins' as m;
+
 .products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    align-items: stretch;
+    @include m.columns($width: 32%,$justify: space-between);
     margin-bottom: 50px;
 }
 
@@ -50,9 +49,6 @@
 }
 
 .product-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    font-weight: 700;
     margin-bottom: 10px;
     text-align: center;
     background: linear-gradient(45deg, #00c6ff, #0072ff);

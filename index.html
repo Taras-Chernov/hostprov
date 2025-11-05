@@ -16,7 +16,7 @@
         <div class="header-container">
             <!-- Логотип и название -->
             <div class="header-brand">
-                <div class="header__logo"><img class="logo__img" src="./src/img/logo/logo.png" alt="logo"></div>
+                <div class="header-logo"><img class="logo-img" src="./src/img/logo/logo.png" alt="logo"></div>
                 <div class="logo"><h1>HOSTPROV</h1></div>
             </div>
 
@@ -95,18 +95,18 @@
                                 <img src="./src/img/slider/drive.png" alt="Скорость и управление">
                             </div>
                         </div>
-                        <div class="nav-btn next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"><title>Chevrons-right SVG Icon</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 12.25L8.25 8l-4.5-4.25m5 8.5L13.25 8l-4.5-4.25"/></svg></div>
+                        <div class="nav-btn next" id="products"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16"><title>Chevrons-right SVG Icon</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 12.25L8.25 8l-4.5-4.25m5 8.5L13.25 8l-4.5-4.25"/></svg></div>
                     </div>
-                <div class="nav-dots">
-                    <div class="dot active" data-slide="0"></div>
-                    <div class="dot" data-slide="1"></div>
-                    <div class="dot" data-slide="2"></div>
+                    <div class="nav-dots">
+                        <div class="dot active" data-slide="0"></div>
+                        <div class="dot" data-slide="1"></div>
+                        <div class="dot" data-slide="2"></div>
+                    </div>
                 </div>
-                
             </div>
         </section>
 
-        <section id="products" class="products">
+        <section class="products">
             <div class="wrapper">
                 <div class="products-container">
                     <!-- Карточка 1 -->
@@ -131,7 +131,7 @@
                     <div class="product-card">
                         <div class="product-icon">👑</div>
                         <h3>Dedicated Server</h3>
-                        <p class="product-subtitle">Сервер с полными правами админа</p>
+                        <p class="product-subtitle">Сервер с полными правами админанистратора</p>
                         <ul class="product-features">
                             <li>Root-доступ к серверу</li>
                             <li>Выделенное оборудование</li>
@@ -150,7 +150,7 @@
                         <div class="product-icon">☁️</div>
                         <h3>Cloud Storage</h3>
                         <p class="product-subtitle">Облачное пространство под ваши нужды</p>
-                        <ul class="product-features">
+                        <ul class="product-features" id="licenses">
                             <li>Масштабируемый объем</li>
                             <li>Высокая доступность данных</li>
                             <li>Шифрование и репликация</li>
@@ -166,7 +166,7 @@
             </div>
         </section>
 
-        <section class="licenses">
+        <section class="licenses" id="licenses">
             <div class="wrapper">
                 <div class="licenses-section">
                     <div class="licenses-container">
@@ -511,7 +511,7 @@
         </section>
 
 
-        <section class="about">
+        <section class="about" id="about">
             <div class="wrapper">
                 <div class="about-section">
                     <div class="about-container">
