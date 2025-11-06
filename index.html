@@ -378,135 +378,135 @@
                 
                 <!-- Блок для заказа дискового пространства -->
                  <div class="configurator-header">
-                        <h4>КОНФИГУРАТОР ДИСКОВОГО ПРОСТРАНСТВА</h4>
-                    </div>
-                <div class="configurator-container" id="config-disk">
-                    
-
-                    <!-- Левый столбец - Выбор конфигурации -->
-                    <div class="selection-section">
-                        <h2>Тип хранилища</h2>
-                        <div class="storage-options">
-                            <div class="storage-option selected" data-type="nvme" data-multiplier="1.5">
-                                <div>SSD NVMe</div>
-                                <div class="storage-multiplier">1.5x</div>
-                            </div>
-                            <div class="storage-option" data-type="sata" data-multiplier="1">
-                                <div>SATA SSD</div>
-                                <div class="storage-multiplier">1x</div>
-                            </div>
-                            <div class="storage-option" data-type="hdd" data-multiplier="0.6">
-                                <div>HDD</div>
-                                <div class="storage-multiplier">0.6x</div>
-                            </div>
-                        </div>
-
-                        <h2>Объем хранилища</h2>
-                        <div class="config-item">
-                            <div class="config-label">500 ГБ</div>
-                            <div class="config-controls">
-                                <button class="quantity-btn minus" data-type="storage-space">-</button>
-                                <span class="config-value" id="storageSpaceQuantity">1</span>
-                                <button class="quantity-btn plus" data-type="storage-space">+</button>
-                            </div>
-                            <div class="config-price">+1 125 ₽/мес</div>
-                        </div>
-
-                        <h2>Резервное копирование</h2>
-                        <div class="processor-options">
-                            <div class="processor-option selected" data-backup="basic" data-price="0">
-                                <div class="processor-name">Базовое</div>
-                                <div class="processor-price">0 ₽/мес</div>
-                            </div>
-                            <div class="processor-option" data-backup="advanced" data-price="500">
-                                <div class="processor-name">Расширенное</div>
-                                <div class="processor-price">500 ₽/мес</div>
-                            </div>
-                            <div class="processor-option" data-backup="premium" data-price="1000">
-                                <div class="processor-name">Премиум</div>
-                                <div class="processor-price">1 000 ₽/мес</div>
-                            </div>
-                        </div>
-                    </div>
-
-    <!-- Правый столбец - Итоговая конфигурация -->
-                    <div class="configuration-section">
-                        <h2>Ваша конфигурация</h2>
-                        
-                        <div class="config-item">
-                            <div class="config-label">Тип хранилища</div>
-                            <div class="config-value" id="configStorageType">SSD NVMe</div>
-                            <div class="config-price">1 125 ₽</div>
-                        </div>
-
-                        <div class="config-item">
-                            <div class="config-label">Объем</div>
-                            <div class="config-value" id="configStorageSpace">500 ГБ</div>
-                            <div class="config-price">1 125 ₽</div>
-                        </div>
-
-                        <div class="config-item">
-                            <div class="config-label">Резервное копирование</div>
-                            <div class="config-value" id="configBackup">Базовое</div>
-                            <div class="config-price">0 ₽</div>
-                        </div>
-
-                        <div class="total-section">
-                            <h5>Итого в месяц:</h5>
-                            <div class="total-price" id="totalStoragePrice">2 250 ₽</div>
-                            <button class="order-btn" id="orderStorageBtn">Заказать хранилище</button>
-                        </div>
-                    </div>
+        <h4>КОНФИГУРАТОР ДИСКОВОГО ПРОСТРАНСТВА</h4>
+    </div>
+    
+    <div class="configurator-container" id="config-disk">
+        <!-- Левый столбец - Выбор конфигурации -->
+        <div class="selection-section">
+            <h2>ТИП ХРАНИЛИЩА</h2>
+            <div class="storage-options">
+                <div class="storage-option selected" data-type="nvme" data-multiplier="1.5">
+                    <div>SSD NVMe</div>
+                    <div class="storage-multiplier">1.5x</div>
                 </div>
+                <div class="storage-option" data-type="sata" data-multiplier="1">
+                    <div>SATA SSD</div>
+                    <div class="storage-multiplier">1x</div>
+                </div>
+                <div class="storage-option" data-type="hdd" data-multiplier="0.6">
+                    <div>HDD</div>
+                    <div class="storage-multiplier">0.6x</div>
+                </div>
+            </div>
 
-<!-- Модальное окно для заказа хранилища -->
-                <div class="modal-overlay" id="storageModalOverlay">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-title">Ваш заказ дискового пространства</div>
-                            <button class="close-modal" id="closeStorageModal">×</button>
-                        </div>
-                        
-                        <div class="order-summary">
-                            <div class="order-item">
-                                <span>Тип хранилища:</span>
-                                <span id="orderStorageType">SSD NVMe</span>
-                            </div>
-                            <div class="order-item">
-                                <span>Объем:</span>
-                                <span id="orderStorageSpace">500 ГБ</span>
-                            </div>
-                            <div class="order-item">
-                                <span>Резервное копирование:</span>
-                                <span id="orderBackup">Базовое</span>
-                            </div>
-                            <div class="order-total">
-                                <span>Итого в месяц:</span>
-                                <span id="orderStorageTotal">2 250 ₽</span>
-                            </div>
-                        </div>
+            <h2>ОБЪЕМ ХРАНИЛИЩА</h2>
+            <div class="config-item">
+                <div class="config-label">500 ГБ</div>
+                <div class="config-controls">
+                    <button class="quantity-btn minus" data-type="storage-space">-</button>
+                    <span class="config-value" id="storageSpaceQuantity">1</span>
+                    <button class="quantity-btn plus" data-type="storage-space">+</button>
+                </div>
+                <div class="config-price">+1 125 ₽/мес</div>
+            </div>
 
-                        <form id="storageOrderForm">
-                            <div class="form-group">
-                                <label for="storageUserName">Ваше имя *</label>
-                                <input type="text" id="storageUserName" required placeholder="Иван Иванов">
-                            </div>
-                            <div class="form-group">
-                                <label for="storageUserEmail">Email *</label>
-                                <input type="email" id="storageUserEmail" required placeholder="ivan@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="storageUserPhone">Телефон *</label>
-                                <input type="tel" id="storageUserPhone" required placeholder="+7 (999) 999-99-99">
-                            </div>
-                            <div class="form-group">
-                                <label for="storageUserComment">Комментарий к заказу</label>
-                                <textarea id="storageUserComment" placeholder="Дополнительные пожелания или требования"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-order">Отправить заказ</button>
-                        </form>
-                    </div>
+            <h2>РЕЗЕРВНОЕ КОПИРОВАНИЕ</h2>
+            <div class="backup-options">
+                <div class="backup-option selected" data-backup="basic" data-price="0">
+                    <div class="backup-name">Базовое</div>
+                    <div class="backup-price">0 ₽/мес</div>
+                </div>
+                <div class="backup-option" data-backup="advanced" data-price="500">
+                    <div class="backup-name">Расширенное</div>
+                    <div class="backup-price">500 ₽/мес</div>
+                </div>
+                <div class="backup-option" data-backup="premium" data-price="1000">
+                    <div class="backup-name">Премиум</div>
+                    <div class="backup-price">1 000 ₽/мес</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правый столбец - Итоговая конфигурация -->
+        <div class="configuration-section">
+            <h2>ВАША КОНФИГУРАЦИЯ</h2>
+            
+            <div class="config-item">
+                <div class="config-label">Тип хранилища</div>
+                <div class="config-value" id="configStorageType">SSD NVMe</div>
+                <div class="config-price" id="configStorageTypePrice">1 125 ₽</div>
+            </div>
+
+            <div class="config-item">
+                <div class="config-label">Объем</div>
+                <div class="config-value" id="configStorageSpace">500 ГБ</div>
+                <div class="config-price" id="configStorageSpacePrice">1 125 ₽</div>
+            </div>
+
+            <div class="config-item">
+                <div class="config-label">Резервное копирование</div>
+                <div class="config-value" id="configBackup">Базовое</div>
+                <div class="config-price" id="configBackupPrice">0 ₽</div>
+            </div>
+
+            <div class="total-section">
+                <h5>ИТОГО В МЕСЯЦ:</h5>
+                <div class="total-price" id="totalStoragePrice">2 250 ₽</div>
+                <button class="order-btn" id="orderStorageBtn">Заказать хранилище</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для заказа хранилища -->
+    <div class="modal-overlay" id="storageModalOverlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Ваш заказ дискового пространства</div>
+                <button class="close-modal" id="closeStorageModal">×</button>
+            </div>
+            
+            <div class="order-summary">
+                <div class="order-item">
+                    <span>Тип хранилища:</span>
+                    <span id="orderStorageType">SSD NVMe</span>
+                </div>
+                <div class="order-item">
+                    <span>Объем:</span>
+                    <span id="orderStorageSpace">500 ГБ</span>
+                </div>
+                <div class="order-item">
+                    <span>Резервное копирование:</span>
+                    <span id="orderBackup">Базовое</span>
+                </div>
+                <div class="order-total">
+                    <span>Итого в месяц:</span>
+                    <span id="orderStorageTotal">2 250 ₽</span>
+                </div>
+            </div>
+
+            <form id="storageOrderForm">
+                <div class="form-group">
+                    <label for="storageUserName">Ваше имя *</label>
+                    <input type="text" id="storageUserName" required placeholder="Иван Иванов">
+                </div>
+                <div class="form-group">
+                    <label for="storageUserEmail">Email *</label>
+                    <input type="email" id="storageUserEmail" required placeholder="ivan@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="storageUserPhone">Телефон *</label>
+                    <input type="tel" id="storageUserPhone" required placeholder="+7 (999) 999-99-99">
+                </div>
+                <div class="form-group">
+                    <label for="storageUserComment">Комментарий к заказу</label>
+                    <textarea id="storageUserComment" placeholder="Дополнительные пожелания или требования"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-order">Отправить заказ</button>
+            </form>
+        </div>
+    </div>
                 </div>
             </div>      
         </section>
@@ -606,3 +606,6 @@
     <script src="./dist/main.js"></script>
 </body>
 </html>
+
+
+

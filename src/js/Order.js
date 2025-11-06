@@ -277,174 +277,200 @@ orderForm.addEventListener('submit', async function(e) {
 //-------------------------------------------------------------------------------------------------------------------------------//
 
 
-// Конфигурация для дискового пространства
-let storageConfig = {
-    storageType: 'nvme',
-    storageMultiplier: 1.5,
-    storageSpace: 500,
-    storageSpaceQuantity: 1,
-    baseStoragePrice: 1125,
-    backup: 'basic',
-    backupPrice: 0
-};
-
-// Элементы DOM для хранилища
-const totalStoragePriceElement = document.getElementById('totalStoragePrice');
-const orderStorageBtn = document.getElementById('orderStorageBtn');
-const storageModalOverlay = document.getElementById('storageModalOverlay');
-const closeStorageModal = document.getElementById('closeStorageModal');
-const storageOrderForm = document.getElementById('storageOrderForm');
-
-// Элементы для отображения в модальном окне хранилища
-const orderStorageType = document.getElementById('orderStorageType');
-const orderStorageSpace = document.getElementById('orderStorageSpace');
-const orderBackup = document.getElementById('orderBackup');
-const orderStorageTotal = document.getElementById('orderStorageTotal');
-
-// Функция расчета стоимости хранилища
-function calculateStorageTotal() {
-    const storageCost = storageConfig.baseStoragePrice * storageConfig.storageSpaceQuantity * storageConfig.storageMultiplier;
-    const backupCost = storageConfig.backupPrice;
-    const total = storageCost + backupCost;
-    return total;
-}
-
-// Функция обновления отображения хранилища
-function updateStorageDisplay() {
-    // Обновляем основное отображение
-    document.getElementById('configStorageType').textContent = getStorageTypeName(storageConfig.storageType);
-    document.getElementById('configStorageSpace').textContent = (storageConfig.storageSpace * storageConfig.storageSpaceQuantity) + ' ГБ';
-    document.getElementById('configBackup').textContent = getBackupName(storageConfig.backup);
-    
-    // Обновляем цены в правой колонке
-    const storageCost = storageConfig.baseStoragePrice * storageConfig.storageSpaceQuantity * storageConfig.storageMultiplier;
-    document.querySelectorAll('.configuration-section .config-item')[1].querySelector('.config-price').textContent = Math.round(storageCost) + ' ₽';
-    document.querySelectorAll('.configuration-section .config-item')[2].querySelector('.config-price').textContent = storageConfig.backupPrice + ' ₽';
-    
-    // Обновляем общую стоимость
-    const total = calculateStorageTotal();
-    totalStoragePriceElement.textContent = Math.round(total).toLocaleString('ru-RU') + ' ₽';
-}
-
-// Функция обновления модального окна хранилища
-function updateStorageOrderModal() {
-    orderStorageType.textContent = getStorageTypeName(storageConfig.storageType);
-    orderStorageSpace.textContent = (storageConfig.storageSpace * storageConfig.storageSpaceQuantity) + ' ГБ';
-    orderBackup.textContent = getBackupName(storageConfig.backup);
-    orderStorageTotal.textContent = Math.round(calculateStorageTotal()).toLocaleString('ru-RU') + ' ₽';
-}
-
-// Вспомогательные функции для хранилища
-function getBackupName(type) {
-    const backups = {
-        'basic': 'Базовое',
-        'advanced': 'Расширенное',
-        'premium': 'Премиум'
-    };
-    return backups[type];
-}
-
-// Обработчики для типа хранилища
-document.querySelectorAll('.configurator-container:last-child .storage-option').forEach(option => {
-    option.addEventListener('click', function() {
-        document.querySelectorAll('.configurator-container:last-child .storage-option').forEach(opt => opt.classList.remove('selected'));
-        this.classList.add('selected');
-        
-        storageConfig.storageType = this.dataset.type;
-        storageConfig.storageMultiplier = parseFloat(this.dataset.multiplier);
-        updateStorageDisplay();
-    });
-});
-
-// Обработчики для кнопок количества хранилища
-document.querySelectorAll('.quantity-btn[data-type="storage-space"]').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const isPlus = this.classList.contains('plus');
-        
-        if (isPlus && storageConfig.storageSpaceQuantity < 20) {
-            storageConfig.storageSpaceQuantity++;
-        }
-        if (!isPlus && storageConfig.storageSpaceQuantity > 1) {
-            storageConfig.storageSpaceQuantity--;
-        }
-        
-        document.getElementById('storageSpaceQuantity').textContent = storageConfig.storageSpaceQuantity;
-        updateStorageDisplay();
-    });
-});
-
-// Обработчики для резервного копирования
-document.querySelectorAll('.configurator-container:last-child .processor-option').forEach(option => {
-    option.addEventListener('click', function() {
-        document.querySelectorAll('.configurator-container:last-child .processor-option').forEach(opt => opt.classList.remove('selected'));
-        this.classList.add('selected');
-        
-        storageConfig.backup = this.dataset.backup;
-        storageConfig.backupPrice = parseInt(this.dataset.price);
-        updateStorageDisplay();
-    });
-});
-
-// Обработчики модального окна хранилища
-orderStorageBtn.addEventListener('click', function() {
-    updateStorageOrderModal();
-    storageModalOverlay.classList.add('active');
-});
-
-closeStorageModal.addEventListener('click', function() {
-    storageModalOverlay.classList.remove('active');
-});
-
-storageModalOverlay.addEventListener('click', function(e) {
-    if (e.target === storageModalOverlay) {
-        storageModalOverlay.classList.remove('active');
-    }
-});
-
-// Обработчик формы заказа хранилища
-storageOrderForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('storageUserName').value,
-        email: document.getElementById('storageUserEmail').value,
-        phone: document.getElementById('storageUserPhone').value,
-        comment: document.getElementById('storageUserComment').value,
-        configuration: {
-            storageType: getStorageTypeName(storageConfig.storageType),
-            storageSpace: storageConfig.storageSpace * storageConfig.storageSpaceQuantity,
-            backup: getBackupName(storageConfig.backup),
-            total: Math.round(calculateStorageTotal()).toLocaleString('ru-RU') + ' ₽'
-        }
-    };
-    
-    // Показываем уведомление о отправке
-    const submitBtn = this.querySelector('.submit-order');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Отправка...';
-    submitBtn.disabled = true;
-    
-    // Отправляем заказ
-    const orderSent = await sendOrder(formData);
-    
-    if (orderSent) {
-        alert('Заказ отправлен! Мы свяжемся с вами в ближайшее время для подтверждения.');
-        storageModalOverlay.classList.remove('active');
-        storageOrderForm.reset();
-    } else {
-        alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
-    }
-    
-    // Восстанавливаем кнопку
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-});
-
-// Инициализация хранилища
-updateStorageDisplay();
 
 
 
 //---------------------------------------------------------------------------------------------------------------------//
 
 
+ // Конфигурация для дискового пространства
+        let storageConfig = {
+            storageType: 'nvme',
+            storageMultiplier: 1.5,
+            storageSpace: 500,
+            storageSpaceQuantity: 1,
+            baseStoragePrice: 1125,
+            backup: 'basic',
+            backupPrice: 0
+        };
+
+        // Элементы DOM для хранилища
+        const totalStoragePriceElement = document.getElementById('totalStoragePrice');
+        const orderStorageBtn = document.getElementById('orderStorageBtn');
+        const storageModalOverlay = document.getElementById('storageModalOverlay');
+        const closeStorageModal = document.getElementById('closeStorageModal');
+        const storageOrderForm = document.getElementById('storageOrderForm');
+
+        // Элементы для отображения в модальном окне хранилища
+        const orderStorageType = document.getElementById('orderStorageType');
+        const orderStorageSpace = document.getElementById('orderStorageSpace');
+        const orderBackup = document.getElementById('orderBackup');
+        const orderStorageTotal = document.getElementById('orderStorageTotal');
+
+        // Функция расчета стоимости хранилища
+        function calculateStorageTotal() {
+            const storageCost = storageConfig.baseStoragePrice * storageConfig.storageSpaceQuantity * storageConfig.storageMultiplier;
+            const backupCost = storageConfig.backupPrice;
+            const total = storageCost + backupCost;
+            return total;
+        }
+
+        // Функция обновления отображения хранилища
+        function updateStorageDisplay() {
+            // Обновляем основное отображение
+            document.getElementById('configStorageType').textContent = getStorageTypeName(storageConfig.storageType);
+            document.getElementById('configStorageSpace').textContent = (storageConfig.storageSpace * storageConfig.storageSpaceQuantity) + ' ГБ';
+            document.getElementById('configBackup').textContent = getBackupName(storageConfig.backup);
+            
+            // Обновляем цены в правой колонке
+            const storageCost = storageConfig.baseStoragePrice * storageConfig.storageSpaceQuantity * storageConfig.storageMultiplier;
+            document.getElementById('configStorageTypePrice').textContent = Math.round(storageCost) + ' ₽';
+            document.getElementById('configStorageSpacePrice').textContent = Math.round(storageCost) + ' ₽';
+            document.getElementById('configBackupPrice').textContent = storageConfig.backupPrice + ' ₽';
+            
+            // Обновляем общую стоимость
+            const total = calculateStorageTotal();
+            totalStoragePriceElement.textContent = Math.round(total).toLocaleString('ru-RU') + ' ₽';
+        }
+
+        // Функция обновления модального окна хранилища
+        function updateStorageOrderModal() {
+            orderStorageType.textContent = getStorageTypeName(storageConfig.storageType);
+            orderStorageSpace.textContent = (storageConfig.storageSpace * storageConfig.storageSpaceQuantity) + ' ГБ';
+            orderBackup.textContent = getBackupName(storageConfig.backup);
+            orderStorageTotal.textContent = Math.round(calculateStorageTotal()).toLocaleString('ru-RU') + ' ₽';
+        }
+
+        // Вспомогательные функции для хранилища
+        function getStorageTypeName(type) {
+            const types = {
+                'nvme': 'SSD NVMe',
+                'sata': 'SATA SSD',
+                'hdd': 'HDD'
+            };
+            return types[type];
+        }
+
+        function getBackupName(type) {
+            const backups = {
+                'basic': 'Базовое',
+                'advanced': 'Расширенное',
+                'premium': 'Премиум'
+            };
+            return backups[type];
+        }
+
+        // Обработчики для типа хранилища
+        document.querySelectorAll('#config-disk .storage-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('#config-disk .storage-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                storageConfig.storageType = this.dataset.type;
+                storageConfig.storageMultiplier = parseFloat(this.dataset.multiplier);
+                updateStorageDisplay();
+            });
+        });
+
+        // Обработчики для кнопок количества хранилища
+        document.querySelectorAll('#config-disk .quantity-btn[data-type="storage-space"]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const isPlus = this.classList.contains('plus');
+                
+                if (isPlus && storageConfig.storageSpaceQuantity < 20) {
+                    storageConfig.storageSpaceQuantity++;
+                }
+                if (!isPlus && storageConfig.storageSpaceQuantity > 1) {
+                    storageConfig.storageSpaceQuantity--;
+                }
+                
+                document.getElementById('storageSpaceQuantity').textContent = storageConfig.storageSpaceQuantity;
+                updateStorageDisplay();
+            });
+        });
+
+        // Обработчики для резервного копирования
+        document.querySelectorAll('#config-disk .backup-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('#config-disk .backup-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                storageConfig.backup = this.dataset.backup;
+                storageConfig.backupPrice = parseInt(this.dataset.price);
+                updateStorageDisplay();
+            });
+        });
+
+        // Обработчики модального окна хранилища
+        orderStorageBtn.addEventListener('click', function() {
+            updateStorageOrderModal();
+            storageModalOverlay.classList.add('active');
+        });
+
+        closeStorageModal.addEventListener('click', function() {
+            storageModalOverlay.classList.remove('active');
+        });
+
+        storageModalOverlay.addEventListener('click', function(e) {
+            if (e.target === storageModalOverlay) {
+                storageModalOverlay.classList.remove('active');
+            }
+        });
+
+        // Обработчик формы заказа хранилища
+        storageOrderForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('storageUserName').value,
+                email: document.getElementById('storageUserEmail').value,
+                phone: document.getElementById('storageUserPhone').value,
+                comment: document.getElementById('storageUserComment').value,
+                configuration: {
+                    storageType: getStorageTypeName(storageConfig.storageType),
+                    storageSpace: storageConfig.storageSpace * storageConfig.storageSpaceQuantity,
+                    backup: getBackupName(storageConfig.backup),
+                    total: Math.round(calculateStorageTotal()).toLocaleString('ru-RU') + ' ₽'
+                }
+            };
+            
+            // Показываем уведомление о отправке
+            const submitBtn = this.querySelector('.submit-order');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Отправка...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Отправляем заказ (заглушка для демонстрации)
+                const orderSent = await sendOrder(formData);
+                
+                if (orderSent) {
+                    alert('Заказ отправлен! Мы свяжемся с вами в ближайшее время для подтверждения.');
+                    storageModalOverlay.classList.remove('active');
+                    storageOrderForm.reset();
+                } else {
+                    alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
+                }
+            } catch (error) {
+                alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте еще раз или свяжитесь с нами по телефону.');
+            }
+            
+            // Восстанавливаем кнопку
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
+
+        // Функция отправки заказа (заглушка)
+        async function sendOrder(formData) {
+            // В реальном приложении здесь будет AJAX запрос к серверу
+            console.log('Отправка заказа:', formData);
+            
+            // Имитация задержки сети
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // В реальном приложении возвращаем true/false в зависимости от ответа сервера
+            return true;
+        }
+
+        // Инициализация хранилища
+        updateStorageDisplay();

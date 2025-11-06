@@ -1577,6 +1577,45 @@ a {
   color: #b0b0b0;
 }
 
+/* Стили для резервного копирования */
+.backup-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.backup-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.backup-option.selected {
+  border-color: #00c6ff;
+  background: rgba(0, 198, 255, 0.1);
+}
+
+.backup-option:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.backup-name {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.backup-price {
+  color: #00c6ff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .total-section {
   margin-top: 30px;
   padding: 25px;
