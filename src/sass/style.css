@@ -66,7 +66,7 @@ table {
   font-family: "Exo 2", "Times New Roman", Times, serif;
 }
 
-.nav-link, .mobile-nav-link, body, h4, span, p, li {
+.nav-link, .mobile-nav-link, body, h4, h5, span, p, li {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
@@ -137,7 +137,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7vw;
+  font-size: 1.5vw;
   line-height: 2.2rem;
   font-weight: 400;
   font-style: normal;
@@ -151,7 +151,7 @@ h2 {
 @media (max-width: 768px) {
   h2 {
     font-size: 4.1vw;
-    line-height: 4.2rem;
+    line-height: 2.5rem;
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0;
@@ -174,11 +174,13 @@ h3 {
   font-style: normal;
   letter-spacing: 0;
   text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
 }
 @media (max-width: 768px) {
   h3 {
     font-size: 2.6vw;
-    line-height: 0;
+    line-height: 1.8rem;
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0;
@@ -195,16 +197,31 @@ h3 {
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   line-height: 2.4rem;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0;
   text-transform: uppercase;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h5 {
+  font-size: 1.6vw;
+  line-height: 2.4rem;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 span {
-  font-size: 1.6vw;
+  font-size: 1.2vw;
   line-height: 1.2em;
   font-weight: 400;
   font-style: normal;
@@ -230,7 +247,7 @@ span {
 }
 
 p {
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   line-height: 2rem;
   font-weight: 400;
   font-style: normal;
@@ -261,6 +278,24 @@ li {
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  li {
+    font-size: 2.08vw;
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0;
+  }
+}
+@media (max-width: 380px) {
+  li {
+    font-size: 4.25vw;
+    line-height: 1.5rem;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0;
+  }
 }
 
 a {
@@ -658,6 +693,17 @@ a {
   border-color: 1px #FF3C3C solid;
 }
 
+.preview {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 20px;
+}
+@media (max-width: 380px) {
+  .preview {
+    padding: 20px 0;
+  }
+}
+
 .slider-container {
   max-height: 500px;
   background: rgba(255, 255, 255, 0.05);
@@ -666,6 +712,11 @@ a {
   padding: 15px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 380px) {
+  .slider-container {
+    min-height: 900px;
+  }
 }
 
 .slider {
@@ -708,6 +759,12 @@ a {
 .slide {
   display: none;
   animation: fadeIn 0.8s ease-in-out;
+}
+@media (max-width: 380px) {
+  .slide {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .slide.active {
@@ -825,7 +882,7 @@ a {
 }
 
 .nav-link {
-  font-size: 1.6vw;
+  font-size: 1.2vw;
   line-height: 1.7rem;
   font-weight: 500;
   font-style: normal;
@@ -1102,8 +1159,7 @@ a {
 .about {
   display: flex;
   justify-content: center;
-  min-height: 48vh;
-  margin-top: 50px;
+  padding: 40px 0;
 }
 
 .about-container {
@@ -1349,17 +1405,26 @@ a {
     padding: 25px 20px;
   }
 }
+.order {
+  padding: 20px 0;
+}
+
 .configurator-container {
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.configurator-container > * {
+  flex-basis: 49%;
+}
+.configurator-container {
+  padding: 20px 0;
+  align-items: normal;
 }
 
 .configurator-header {
-  grid-column: 1/-1;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .configurator-header h1 {
@@ -1389,10 +1454,11 @@ a {
 .processor-options {
   display: grid;
   gap: 15px;
-  margin-bottom: 30px;
 }
 
 .processor-option {
+  display: flex;
+  justify-content: space-around;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 15px;
@@ -1475,7 +1541,6 @@ a {
 .cores-price {
   color: #00c6ff;
   font-weight: bold;
-  margin-left: auto;
 }
 
 .storage-options {
@@ -1486,6 +1551,9 @@ a {
 }
 
 .storage-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 15px;
@@ -1507,7 +1575,6 @@ a {
 .storage-multiplier {
   font-size: 0.9em;
   color: #b0b0b0;
-  margin-top: 5px;
 }
 
 .total-section {
@@ -1519,8 +1586,9 @@ a {
 }
 
 .total-price {
-  font-size: 2.5em;
-  font-weight: bold;
+  font-size: 2.5vw;
+  line-height: 2rem;
+  font-weight: 700;
   color: #00c6ff;
   margin: 15px 0;
 }
@@ -1703,9 +1771,19 @@ a {
   flex-basis: 32%;
 }
 .products-container {
-  margin-bottom: 50px;
+  padding: 20px 0;
 }
-
+@media (max-width: 768px) {
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .products-container > * {
+    flex-basis: 100%;
+  }
+}
 .product-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -1716,8 +1794,8 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
   padding: 15px;
+  min-height: 470px;
 }
 
 .product-card:hover {
@@ -1746,16 +1824,12 @@ a {
   font-size: 2em;
   margin: 30px;
   text-align: center;
-  flex-shrink: 0;
 }
 
 .product-card h3 {
   margin-bottom: 10px;
-  text-align: center;
-  background: linear-gradient(45deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  flex-shrink: 0;
 }
 
 .product-subtitle {
@@ -1763,7 +1837,6 @@ a {
   color: #b0b0b0;
   margin-bottom: 25px;
   line-height: 1.4;
-  flex-shrink: 0;
 }
 
 .product-features {
@@ -1779,7 +1852,6 @@ a {
   display: flex;
   align-items: center;
   color: #e0e0e0;
-  flex-shrink: 0;
 }
 
 .product-features li::before {
@@ -1788,12 +1860,10 @@ a {
   font-weight: bold;
   margin-right: 10px;
   font-size: 1.1em;
-  flex-shrink: 0;
 }
 
 .product-footer {
   margin-top: auto;
-  flex-shrink: 0;
 }
 
 .product-price {
@@ -1823,12 +1893,16 @@ a {
 .product-btn.primary {
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   color: white;
+  text-align: center;
+  padding: 22px 0;
 }
 
 .product-btn.secondary {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 22px 0;
 }
 
 .product-btn:hover {
@@ -1846,8 +1920,8 @@ a {
     padding: 25px 20px;
   }
 }
-.licenses-section {
-  padding-bottom: 40px;
+.licenses {
+  padding: 20px 0;
 }
 
 .licenses-container {
@@ -1897,11 +1971,8 @@ a {
   flex-grow: 1;
 }
 
-.licenses-text h3 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.8em;
-  font-weight: 700;
-  margin-bottom: 15px;
+.licenses-title {
+  margin-top: 30px;
   background: linear-gradient(45deg, #ff6b6b, #ffa726);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1909,8 +1980,6 @@ a {
 
 .licenses-text p {
   color: #e0e0e0;
-  font-size: 1.1em;
-  line-height: 1.5;
   margin-bottom: 20px;
 }
 

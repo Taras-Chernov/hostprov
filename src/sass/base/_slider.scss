@@ -1,3 +1,14 @@
+@use '../abstract/mixins' as m;
+
+.preview {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 20px;
+    @include m.media-mobile {
+        padding: 20px 0;
+        }
+}
+
 .slider-container {
     max-height: 500px;
     background: rgba(255, 255, 255, 0.05);
@@ -6,6 +17,12 @@
     padding: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    @include m.media-tablet {
+            
+        }
+    @include m.media-mobile {
+        min-height: 900px;
+        }
 }
 
 .slider {
@@ -48,13 +65,17 @@
 .slide {
     display: none;
     animation: fadeIn 0.8s ease-in-out;
+    @include m.media-mobile {
+        display: flex;
+        flex-direction: column;
+        }
 }
 
 .slide.active {
     display: flex;
 }
 
-    .features {
+.features {
     list-style: none;
     margin-top: 15px;
 }

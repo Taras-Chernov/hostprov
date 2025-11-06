@@ -1,9 +1,8 @@
 .licenses {
-    
+    padding: 20px 0;
 }
 
 .licenses-section {
-    padding-bottom: 40px;
 }
 
 .licenses-container {
@@ -53,11 +52,8 @@
     flex-grow: 1;
 }
 
-.licenses-text h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
-    font-weight: 700;
-    margin-bottom: 15px;
+.licenses-title {
+    margin-top: 30px;
     background: linear-gradient(45deg, #ff6b6b, #ffa726);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,8 +61,6 @@
 
 .licenses-text p {
     color: #e0e0e0;
-    font-size: 1.1em;
-    line-height: 1.5;
     margin-bottom: 20px;
 }
 

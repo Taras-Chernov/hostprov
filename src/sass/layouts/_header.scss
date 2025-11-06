@@ -43,7 +43,7 @@
 }
 
 .nav-link {
-    @include m.font($size: 1.6vw, $height: 1.7rem, $weight: 500);
+    @include m.font($size: 1.2vw, $height: 1.7rem, $weight: 500);
     @extend %font-text;
     color: c.$color-menu;
     text-decoration: none;

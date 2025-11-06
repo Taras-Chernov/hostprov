@@ -37,7 +37,7 @@
         </div>
     </header>
     <main>
-        <section class="about">
+        <section class="preview">
             <div class="wrapper">
                 <div class="slider-container">
                     <div class="slider">
@@ -124,7 +124,7 @@
                         <div class="product-price">
                             <span class="price">от 2 900 ₽/мес</span>
                         </div>
-                        <button class="product-btn primary"><a href="#configurator">Выбрать конфигурацию</a></button>
+                        <a class="product-btn primary" href="#configurator">Выбрать конфигурацию</a>
                     </div>
 
                     <!-- Карточка 2 -->
@@ -142,7 +142,7 @@
                         <div class="product-price">
                             <span class="price">от 4 500 ₽/мес</span>
                         </div>
-                        <button class="product-btn secondary"><a href="#configurator-server">Настроить сервер</a></button>
+                        <a class="product-btn secondary" href="#configurator-server">Настроить сервер</a>
                     </div>
 
                     <!-- Карточка 3 -->
@@ -160,7 +160,7 @@
                         <div class="product-price">
                             <span class="price">от 15 ₽/ГБ в месяц</span>
                         </div>
-                        <button class="product-btn primary"><a href="#config-disk">Рассчитать объем</a></button>
+                        <a class="product-btn primary" href="#config-disk">Рассчитать объем</a>
                     </div>
                 </div>
             </div>
@@ -171,10 +171,9 @@
                 <div class="licenses-section">
                     <div class="licenses-container">
                         <div class="licenses-card">
+                            <h3 class="licenses-title">Лицензии 1С по выгодной цене</h3>
                             <div class="licenses-content">
-                                <div class="licenses-icon">📊</div>
                                 <div class="licenses-text">
-                                    <h3>Лицензии 1С по выгодной цене</h3>
                                     <p>Приобретайте официальные лицензии 1С для вашего бизнеса с дополнительной скидкой при заказе хостинга</p>
                                     <div class="licenses-features">
                                         <div class="feature-item">
@@ -210,10 +209,11 @@
         </section>
         <section class="order">
             <div class="wrapper">
+                <div class="configurator-header" id="configurator-server">
+                    <h4 id="configurator">КОНФИГУРАТОР СЕРВЕРНЫХ МОЩНОСТЕЙ</h4>
+                </div>
                 <div class="configurator-container">
-                    <div class="configurator-header" id="configurator-server">
-                        <h1 id="configurator">КОНФИГУРАТОР СЕРВЕРНЫХ МОЩНОСТЕЙ</h1>
-                    </div>
+                    
 
                     <!-- Левый столбец - Выбор конфигурации -->
                     <div class="selection-section">
@@ -314,7 +314,7 @@
                         </div>
 
                         <div class="total-section">
-                            <h3>Итого в месяц:</h3>
+                            <h5>Итого в месяц:</h5>
                             <div class="total-price" id="totalPrice">12 525 ₽</div>
                             <button class="order-btn" id="orderBtn">Заказать мощности</button>
                         </div>
@@ -377,10 +377,11 @@
                 
                 
                 <!-- Блок для заказа дискового пространства -->
-                <div class="configurator-container" id="config-disk">
-                    <div class="configurator-header">
-                        <h1>КОНФИГУРАТОР ДИСКОВОГО ПРОСТРАНСТВА</h1>
+                 <div class="configurator-header">
+                        <h4>КОНФИГУРАТОР ДИСКОВОГО ПРОСТРАНСТВА</h4>
                     </div>
+                <div class="configurator-container" id="config-disk">
+                    
 
                     <!-- Левый столбец - Выбор конфигурации -->
                     <div class="selection-section">
@@ -451,7 +452,7 @@
                         </div>
 
                         <div class="total-section">
-                            <h3>Итого в месяц:</h3>
+                            <h5>Итого в месяц:</h5>
                             <div class="total-price" id="totalStoragePrice">2 250 ₽</div>
                             <button class="order-btn" id="orderStorageBtn">Заказать хранилище</button>
                         </div>
@@ -459,54 +460,54 @@
                 </div>
 
 <!-- Модальное окно для заказа хранилища -->
-<div class="modal-overlay" id="storageModalOverlay">
-    <div class="modal-content">
-        <div class="modal-header">
-            <div class="modal-title">Ваш заказ дискового пространства</div>
-            <button class="close-modal" id="closeStorageModal">×</button>
-        </div>
-        
-        <div class="order-summary">
-            <div class="order-item">
-                <span>Тип хранилища:</span>
-                <span id="orderStorageType">SSD NVMe</span>
-            </div>
-            <div class="order-item">
-                <span>Объем:</span>
-                <span id="orderStorageSpace">500 ГБ</span>
-            </div>
-            <div class="order-item">
-                <span>Резервное копирование:</span>
-                <span id="orderBackup">Базовое</span>
-            </div>
-            <div class="order-total">
-                <span>Итого в месяц:</span>
-                <span id="orderStorageTotal">2 250 ₽</span>
-            </div>
-        </div>
+                <div class="modal-overlay" id="storageModalOverlay">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title">Ваш заказ дискового пространства</div>
+                            <button class="close-modal" id="closeStorageModal">×</button>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <div class="order-item">
+                                <span>Тип хранилища:</span>
+                                <span id="orderStorageType">SSD NVMe</span>
+                            </div>
+                            <div class="order-item">
+                                <span>Объем:</span>
+                                <span id="orderStorageSpace">500 ГБ</span>
+                            </div>
+                            <div class="order-item">
+                                <span>Резервное копирование:</span>
+                                <span id="orderBackup">Базовое</span>
+                            </div>
+                            <div class="order-total">
+                                <span>Итого в месяц:</span>
+                                <span id="orderStorageTotal">2 250 ₽</span>
+                            </div>
+                        </div>
 
-        <form id="storageOrderForm">
-            <div class="form-group">
-                <label for="storageUserName">Ваше имя *</label>
-                <input type="text" id="storageUserName" required placeholder="Иван Иванов">
-            </div>
-            <div class="form-group">
-                <label for="storageUserEmail">Email *</label>
-                <input type="email" id="storageUserEmail" required placeholder="ivan@example.com">
-            </div>
-            <div class="form-group">
-                <label for="storageUserPhone">Телефон *</label>
-                <input type="tel" id="storageUserPhone" required placeholder="+7 (999) 999-99-99">
-            </div>
-            <div class="form-group">
-                <label for="storageUserComment">Комментарий к заказу</label>
-                <textarea id="storageUserComment" placeholder="Дополнительные пожелания или требования"></textarea>
-            </div>
-            
-            <button type="submit" class="submit-order">Отправить заказ</button>
-        </form>
-    </div>
-</div>
+                        <form id="storageOrderForm">
+                            <div class="form-group">
+                                <label for="storageUserName">Ваше имя *</label>
+                                <input type="text" id="storageUserName" required placeholder="Иван Иванов">
+                            </div>
+                            <div class="form-group">
+                                <label for="storageUserEmail">Email *</label>
+                                <input type="email" id="storageUserEmail" required placeholder="ivan@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="storageUserPhone">Телефон *</label>
+                                <input type="tel" id="storageUserPhone" required placeholder="+7 (999) 999-99-99">
+                            </div>
+                            <div class="form-group">
+                                <label for="storageUserComment">Комментарий к заказу</label>
+                                <textarea id="storageUserComment" placeholder="Дополнительные пожелания или требования"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-order">Отправить заказ</button>
+                        </form>
+                    </div>
+                </div>
             </div>      
         </section>
 
