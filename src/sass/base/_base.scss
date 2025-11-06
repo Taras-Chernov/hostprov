@@ -78,8 +78,8 @@ h3 {
 }
 
 h4 {
-    @include m.font($size: 2rem, $height: 2.4rem);
-    @extend %font-text;
+    @include m.font($size: 2vw, $height: 2.4rem);
+    @extend %font-primary;
     text-transform: uppercase;
     background: linear-gradient(45deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
@@ -88,7 +88,7 @@ h4 {
 
 h5 {
     @include m.font($size: 1.6vw, $height: 2.4rem);
-    @extend %font-text;
+    @extend %font-primary;
     text-transform: uppercase;
     background: linear-gradient(45deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;

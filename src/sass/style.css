@@ -62,11 +62,11 @@ table {
   transition: all 0.9s ease-out;
 }
 
-.form_name::placeholder, .form_tel::placeholder, .social__link, .modal__name::placeholder, .modal__tel::placeholder, .type__button_link, .form_button, .modal__button, .navigation__link, h1, h2, h3 {
+.form_name::placeholder, .form_tel::placeholder, .social__link, .modal__name::placeholder, .modal__tel::placeholder, .type__button_link, .form_button, .modal__button, .navigation__link, h1, h2, h3, h4, h5 {
   font-family: "Exo 2", "Times New Roman", Times, serif;
 }
 
-.nav-link, .mobile-nav-link, body, h4, h5, span, p, li {
+.nav-link, .mobile-nav-link, body, span, p, li {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
@@ -197,7 +197,7 @@ h3 {
 }
 
 h4 {
-  font-size: 2rem;
+  font-size: 2vw;
   line-height: 2.4rem;
   font-weight: 400;
   font-style: normal;
@@ -1187,10 +1187,8 @@ a {
 }
 
 .about-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.3em;
-  font-weight: 700;
-  margin-bottom: 40px;
+  font-size: 2vw;
+  margin-bottom: 30px;
   text-align: center;
   background: linear-gradient(45deg, #00c6ff, #0072ff);
   -webkit-background-clip: text;
@@ -1203,9 +1201,7 @@ a {
 }
 
 .about-paragraph {
-  font-size: 1.1em;
   margin-bottom: 25px;
-  color: #e0e0e0;
   text-align: justify;
 }
 
@@ -1214,9 +1210,6 @@ a {
 }
 
 .expertise-main-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.8em;
-  font-weight: 600;
   margin-bottom: 30px;
   text-align: center;
   color: #fff;
@@ -1232,13 +1225,15 @@ a {
   flex-basis: 32%;
 }
 .expertise-grid {
-  /*display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;*/
+  align-items: normal;
   margin-top: 30px;
 }
 
 .expertise-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.08);
   padding: 30px;
   border-radius: 15px;
@@ -1261,9 +1256,6 @@ a {
 }
 
 .expertise-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2em;
-  font-weight: 600;
   margin-bottom: 15px;
   color: #00c6ff;
   text-align: center;
@@ -1301,9 +1293,6 @@ a {
 }
 
 .experience-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
   margin-bottom: 20px;
   color: #fff;
   text-align: center;
@@ -1326,17 +1315,12 @@ a {
 }
 
 .why-us-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-  font-weight: 700;
   margin-bottom: 20px;
   color: #00c6ff;
 }
 
 .why-us-description {
-  font-size: 1.1em;
   color: #e0e0e0;
-  line-height: 1.6;
   margin-bottom: 25px;
 }
 

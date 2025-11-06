@@ -35,10 +35,8 @@
 }
 
 .about-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.3em;
-    font-weight: 700;
-    margin-bottom: 40px;
+    font-size: 2vw;
+    margin-bottom: 30px;
     text-align: center;
     background: linear-gradient(45deg, #00c6ff, #0072ff);
     -webkit-background-clip: text;
@@ -51,9 +49,7 @@
 }
 
 .about-paragraph {
-    font-size: 1.1em;
     margin-bottom: 25px;
-    color: #e0e0e0;
     text-align: justify;
 }
 
@@ -62,9 +58,6 @@
 }
 
 .expertise-main-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
-    font-weight: 600;
     margin-bottom: 30px;
     text-align: center;
     color: #fff;
@@ -72,13 +65,15 @@
 
 .expertise-grid {
     @include m.columns($width: 32%,$justify: space-between);
-    /*display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 25px;*/
+    align-items: normal;
     margin-top: 30px;
 }
 
 .expertise-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     background: rgba(255, 255, 255, 0.08);
     padding: 30px;
     border-radius: 15px;
@@ -101,9 +96,6 @@
 }
 
 .expertise-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2em;
-    font-weight: 600;
     margin-bottom: 15px;
     color: #00c6ff;
     text-align: center;
@@ -141,9 +133,7 @@
 }
 
 .experience-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    font-weight: 600;
+
     margin-bottom: 20px;
     color: #fff;
     text-align: center;
@@ -166,17 +156,13 @@
 }
 
 .why-us-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    font-weight: 700;
+
     margin-bottom: 20px;
     color: #00c6ff;
 }
 
 .why-us-description {
-    font-size: 1.1em;
     color: #e0e0e0;
-    line-height: 1.6;
     margin-bottom: 25px;
 }
 
