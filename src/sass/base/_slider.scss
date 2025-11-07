@@ -5,24 +5,22 @@
     justify-content: center;
     padding: 60px 0 20px;
     @include m.media-mobile {
-        padding: 20px 0;
+        
         }
 }
 
 .slider-container {
-    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 540px;
+    max-height: 940px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    @include m.media-tablet {
-            
-        }
-    @include m.media-mobile {
-        min-height: 900px;
-        }
 }
 
 .slider {
@@ -65,8 +63,10 @@
 .slide {
     display: none;
     animation: fadeIn 0.8s ease-in-out;
+    @include m.media-tablet {
+        flex-direction: column;
+        }
     @include m.media-mobile {
-        display: flex;
         flex-direction: column;
         }
 }

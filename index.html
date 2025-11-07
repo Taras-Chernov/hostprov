@@ -16,8 +16,11 @@
         <div class="header-container">
             <!-- Логотип и название -->
             <div class="header-brand">
-                <div class="header-logo"><img class="logo-img" src="./src/img/logo/logo.png" alt="logo"></div>
-                <div class="logo"><h1>HOSTPROV</h1></div>
+                <div class="header-logo"><img class="logo-img" src="./src/img/logo/logo3.png" alt="logo"></div>
+                <div class="logo-title">
+                    <div class="logo"><h1>HOSTPROV</h1></div>
+                    <div class="logo-description"><span>Ваш Надёжный Хостинг Провайдер</span></div>
+                </div>
             </div>
 
             <!-- Основная навигация -->
@@ -112,7 +115,7 @@
                     <!-- Карточка 1 -->
                     <div class="product-card">
                         <div class="product-icon">🛡️</div>
-                        <h3>Managed Server</h3>
+                        <h2 class="product-title">Managed Server</h2>
                         <p class="product-subtitle">Сервер под нашим полным сопровождением</p>
                         <ul class="product-features">
                             <li>Полное администрирование 24/7</li>
@@ -130,7 +133,7 @@
                     <!-- Карточка 2 -->
                     <div class="product-card">
                         <div class="product-icon">👑</div>
-                        <h3>Dedicated Server</h3>
+                        <h2 class="product-title">Dedicated Server</h2>
                         <p class="product-subtitle">Сервер с полными правами админанистратора</p>
                         <ul class="product-features">
                             <li>Root-доступ к серверу</li>
@@ -148,7 +151,7 @@
                     <!-- Карточка 3 -->
                     <div class="product-card">
                         <div class="product-icon">☁️</div>
-                        <h3>Cloud Storage</h3>
+                        <h2 class="product-title">Cloud Storage</h2>
                         <p class="product-subtitle">Облачное пространство под ваши нужды</p>
                         <ul class="product-features" id="licenses">
                             <li>Масштабируемый объем</li>
@@ -171,7 +174,7 @@
                 <div class="licenses-section">
                     <div class="licenses-container">
                         <div class="licenses-card">
-                            <h3 class="licenses-title">Лицензии 1С по выгодной цене</h3>
+                            <h2 class="licenses-title">Лицензии 1С по выгодной цене</h2>
                             <div class="licenses-content">
                                 <div class="licenses-text">
                                     <p>Приобретайте официальные лицензии 1С для вашего бизнеса с дополнительной скидкой при заказе хостинга</p>
@@ -210,112 +213,111 @@
         <section class="order">
             <div class="wrapper">
                 <div class="configurator-header" id="configurator-server">
-                    <h4 id="configurator">КОНФИГУРАТОР СЕРВЕРНЫХ МОЩНОСТЕЙ</h4>
+                    <h2 id="configurator">КОНФИГУРАТОР СЕРВЕРНЫХ МОЩНОСТЕЙ</h2>
                 </div>
                 <div class="configurator-container">
                     
 
                     <!-- Левый столбец - Выбор конфигурации -->
                     <div class="selection-section">
-                        <h2>Процессор</h2>
+                        <h3 class="processor-title">Процессор</h3>
                         <div class="processor-options">
                             <div class="processor-option selected" data-processor="xeon-gold" data-price="5000" data-cores="8">
-                                <div class="processor-name">Xeon Gold 6248R</div>
-                                <div class="processor-price">5 000 ₽/мес</div>
+                                <div class="processor-name"><span>Xeon Gold 6248R</span></div>
+                                <div class="processor-price"><span>5 000 ₽/мес</span></div>
                             </div>
                             <div class="processor-option" data-processor="xeon-silver" data-price="3500" data-cores="6">
-                                <div class="processor-name">Xeon Silver 4214</div>
-                                <div class="processor-price">3 500 ₽/мес</div>
+                                <div class="processor-name"><span>Xeon Silver 4214</span></div>
+                                <div class="processor-price"><span>3 500 ₽/мес</span></div>
                             </div>
                             <div class="processor-option" data-processor="amd-epyc" data-price="4200" data-cores="8">
-                                <div class="processor-name">AMD EPYC 7343</div>
-                                <div class="processor-price">4 200 ₽/мес</div>
+                                <div class="processor-name"><span>AMD EPYC 7343</span></div>
+                                <div class="processor-price"><span>4 200 ₽/мес</span></div>
                             </div>
                         </div>
 
                         <div class="cores-section">
-                            <h2>Количество ядер</h2>
+                            <h3>Количество ядер</h3>
                             <div class="config-item">
-                                <div class="config-label">8 ядер</div>
+                                <div class="config-label"><span>8 ядер</span></div>
                                 <div class="config-controls">
                                     <button class="quantity-btn minus" data-type="cores">-</button>
                                     <span class="config-value" id="coresQuantity">8</span>
                                     <button class="quantity-btn plus" data-type="cores">+</button>
                                 </div>
-                                <div class="cores-price">+4 000 ₽/мес</div>
+                                <div class="cores-price"><span>+4 000 ₽/мес</span></div>
                             </div>
                         </div>
 
-                        <h2>Оперативная память (RAM)</h2>
+                        <h3>Оперативная память (RAM)</h3>
                         <div class="config-item">
-                            <div class="config-label">32 ГБ</div>
+                            <div class="config-label"><span>32 ГБ</span></div>
                             <div class="config-controls">
                                 <button class="quantity-btn minus" data-type="ram">-</button>
                                 <span class="config-value" id="ramQuantity">1</span>
                                 <button class="quantity-btn plus" data-type="ram">+</button>
                             </div>
-                            <div class="config-price">+2 400 ₽/мес</div>
+                            <div class="config-price"><span>+2 400 ₽/мес</span></div>
                         </div>
 
-                        <h2>Дисковое пространство</h2>
+                        <h3>Дисковое пространство</h3>
                         <div class="config-item">
-                            <div class="config-label">500 ГБ</div>
+                            <div class="config-label"><span>500 ГБ</span></div>
                             <div class="config-controls">
                                 <button class="quantity-btn minus" data-type="storage">-</button>
                                 <span class="config-value" id="storageQuantity">1</span>
                                 <button class="quantity-btn plus" data-type="storage">+</button>
                             </div>
-                            <div class="config-price">+1 125 ₽/мес</div>
+                            <div class="config-price"><span>+1 125 ₽/мес</span></div>
                         </div>
 
-                        <h2>Тип хранилища</h2>
+                        <h3>Тип хранилища</h3>
                         <div class="storage-options">
                             <div class="storage-option selected" data-type="nvme" data-multiplier="1.5">
-                                <div>SSD NVMe</div>
-                                <div class="storage-multiplier">1.5x</div>
+                                <div><span>SSD NVMe</span></div>
+                                <div class="storage-multiplier"><span>1.5x</span></div>
                             </div>
                             <div class="storage-option" data-type="sata" data-multiplier="1">
-                                <div>SATA SSD</div>
-                                <div class="storage-multiplier">1x</div>
+                                <div><span>SATA SSD</span></div>
+                                <div class="storage-multiplier"><span>1x</span></div>
                             </div>
                             <div class="storage-option" data-type="hdd" data-multiplier="0.6">
-                                <div>HDD</div>
-                                <div class="storage-multiplier">0.6x</div>
+                                <div><span>HDD</span></div>
+                                <div class="storage-multiplier"><span>0.6x</span></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Правый столбец - Итоговая конфигурация -->
                     <div class="configuration-section">
-                        <h2>Ваша конфигурация</h2>
-                        
+                        <h3 class="configuration-title">Ваша конфигурация</h3>
                         <div class="config-item">
-                            <div class="config-label">Процессор</div>
-                            <div class="config-value" id="configProcessor">Xeon Gold 6248R</div>
-                            <div class="config-price">5 000 ₽</div>
+                            <div class="config-label"><span>Процессор</span></div>
+                            <div class="config-value" id="configProcessor"><span>Xeon Gold 6248R</span></div>
+                            <div class="config-price"><span>5 000 ₽</span></div>
                         </div>
 
                         <div class="config-item">
-                            <div class="config-label">Ядра</div>
-                            <div class="config-value" id="configCores">8 ядер</div>
-                            <div class="config-price">4 000 ₽</div>
+                            <div class="config-label"><span>Ядра</span></div>
+                            <div class="config-value" id="configCores"><span>8 ядер</span></div>
+                            <div class="config-price"><span>4 000 ₽</span></div>
                         </div>
 
                         <div class="config-item">
-                            <div class="config-label">Память</div>
-                            <div class="config-value" id="configRam">32 ГБ</div>
-                            <div class="config-price">2 400 ₽</div>
+                            <div class="config-label"><span>Память</span></div>
+                            <div class="config-value" id="configRam"><span>32 ГБ</span></div>
+                            <div class="config-price"><span>2 400 ₽</span></div>
                         </div>
 
                         <div class="config-item">
-                            <div class="config-label">Хранилище</div>
-                            <div class="config-value" id="configStorage">500 ГБ SSD NVMe</div>
-                            <div class="config-price">1 125 ₽</div>
+                            <div class="config-label"><span>Хранилище</span></div>
+                            <div class="config-value" id="configStorage"><span>500 ГБ SSD NVMe</span></div>
+                            <div class="config-price"><span>1 125 ₽</span></div>
                         </div>
 
                         <div class="total-section">
-                            <h5>Итого в месяц:</h5>
-                            <div class="total-price" id="totalPrice">12 525 ₽</div>
+                            <h3>Итого в месяц:</h3>
+                            <div class="total-price" id="totalPrice"><span>12 525 ₽</span></div>
                             <button class="order-btn" id="orderBtn">Заказать мощности</button>
                         </div>
                     </div>

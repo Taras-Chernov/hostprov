@@ -36,6 +36,13 @@
     -webkit-text-fill-color: transparent;
 }
 
+.logo-description {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 .header-nav {
     display: flex;
     align-items: center;
@@ -43,7 +50,7 @@
 }
 
 .nav-link {
-    @include m.font($size: 1.2vw, $height: 1.7rem, $weight: 500);
+    @include m.font($size: clamp(0.8rem, 1.1vw, 1.1rem), $height: 1.7rem, $weight: 500);
     @extend %font-text;
     color: c.$color-menu;
     text-decoration: none;

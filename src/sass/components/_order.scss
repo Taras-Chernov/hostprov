@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.configurator-header h1 {
+.configurator-header{
     font-size: 2.5em;
     margin-bottom: 10px;
     background: linear-gradient(45deg, #00c6ff, #0072ff);
@@ -28,6 +28,10 @@
     border-radius: 20px;
     padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.configuration-title {
+    margin-bottom: 10px;
 }
 
 .configuration-section {
@@ -47,8 +51,9 @@
 .processor-option {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -64,10 +69,12 @@
     background: rgba(255, 255, 255, 0.15);
 }
 
+.processor-title {
+    margin-bottom: 10px;
+}
+
 .processor-name {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 5px;
+
 }
 
 .processor-price {
@@ -80,6 +87,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -143,7 +151,7 @@
     align-items: center;
     justify-content: space-around;
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
     text-align: center;
     cursor: pointer;
@@ -213,7 +221,7 @@
 }
 
 .total-price {
-    font-size: 2.5vw;
+    font-size: clamp(1rem, 2vw, 1.8rem);
     line-height: 2rem;
     font-weight: 700;
     color: #00c6ff;
@@ -382,7 +390,7 @@
 
 @media (max-width: 968px) {
     .configurator-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
     
     .storage-options {
